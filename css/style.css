@@ -1,0 +1,37 @@
+img{
+}
+#button{
+	padding-top: 5%;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+}
+h1{
+	font-size: 40px;
+	color: #A239CA;
+}
+p{
+	font-size: 20px;
+}
+img{
+	margin-right: 10%;
+	height: 400px;
+	width: 600px;
+}
+button{
+	height: 70px;
+	width: 300px;
+	background-color: #007849;
+	border-radius: 25px;
+}
+#body{
+	margin-top: 10%;
+	display: flex;
+	justify-content: center;
+	
+	height: 450px;
+}
+
+body{
+	background-color: #f5f5dc;
+}

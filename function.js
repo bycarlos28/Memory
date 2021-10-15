@@ -1,6 +1,6 @@
 var back = document.getElementsByClassName('back');
 var obverse = document.getElementsByClassName('obverse');
-var letters = document.getElementsByTagName('div')
+var letters = document.getElementsByClassName('letter')
 var counter = document.getElementById('counter');
 var attempts = 0;
 var playedCard = 0;

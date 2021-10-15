@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 	<title>Game</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="function.js"></script>
 </head>
 <body>
     <div>
@@ -50,6 +51,5 @@
             }
         ?>
     </table>
-    <script type="text/javascript" src="function.js"></script>
 </body>
 </html>

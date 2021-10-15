@@ -1,10 +1,10 @@
-var reverso = document.getElementsByClassName('reverso');
-var anverso = document.getElementsByClassName('anverso');
+var back = document.getElementsByClassName('back');
+var obverse = document.getElementsByClassName('obverse');
 
-function comprobarCarta(i) {
-	if (anverso[i].hasAttribute("hidden")) {
-		reverso[i].hidden = true;
-		anverso[i].removeAttribute("hidden");
+function turnLetter(i) {
+	if (obverse[i].hasAttribute("hidden")) {
+		back[i].hidden = true;
+		obverse[i].removeAttribute("hidden");
 
 	}
 }

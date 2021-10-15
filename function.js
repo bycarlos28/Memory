@@ -6,6 +6,7 @@ var attempts = 0;
 var playedCard = 0;
 var cardId = [];
 
+
 function turnLetter(i) {
 	if (obverse[i].hasAttribute("hidden")) {
 		back[i].hidden = true;
@@ -16,7 +17,6 @@ function turnLetter(i) {
 }
 
 function onlyTwoCards(i){
-	console.log(playedCard);
 	if (playedCard<1){
 		turnLetter(i);
 	}
@@ -30,14 +30,31 @@ function onlyTwoCards(i){
 }
 
 function checkLetter(i){
-	console.log(attempts);
 	if (letters[cardId[0]].getAttribute("cardid") == letters[cardId[1]].getAttribute("cardid")) {
 		letters[cardId[0]].setAttribute("resolved",true);
 		letters[cardId[1]].setAttribute("resolved",true);
 		cardId = [];
+		isWin();
+
+		if (isWin()){
+			window.location.href = "./index.php";
+		}
+
 	}
 }
 
 function Attempts(){
 	counter.innerHTML = attempts;
+}
+
+function isWin(){
+	
+	FlagWin=true;
+
+	for(i=0 ; i<letters.length;i++){
+		if (letters[i].getAttribute("resolved")!="true"){
+			FlagWin=false;
+		}
+	}
+	return FlagWin;
 }

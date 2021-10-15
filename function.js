@@ -14,17 +14,20 @@ function turnLetter(i) {
 }
 
 function onlyTwoCards(i){
-	if (playedCard<2){
+	console.log(playedCard);
+	if (playedCard<1){
 		turnLetter(i);
-	}else{
+	}
+	else if (playedCard==1){
+		turnLetter(i);
 		checkLetter(i);
 		playedCard = 0;
 	}
 }
 
 function checkLetter(i){
+	console.log("fuera");
 	if (letters[cardId[0]].getAttribute("cardid") == letters[cardId[1]].getAttribute("cardid")) {
-		alert(cardId);
 		letters[cardId[0]].setAttribute("resolved",true);
 		letters[cardId[1]].setAttribute("resolved",true);
 		cardId = [];

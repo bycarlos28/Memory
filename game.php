@@ -34,7 +34,7 @@
                 for($j=1;$j<=$col;$j++){
                     $rand=random_int(0,count($cards["cards"])-1);
                     echo '<td>
-                            <div flipped="false" cardid='.$cardIDs[$cards["cards"][$rand]].' resolved="false">
+                            <div flipped="false" cardid='.$cardIDs[$cards["cards"][$rand]].' resolved="false" onclick="">
                                 <img src="'.$CardDir.$cards["cards"][$rand].'">
                             </div>
                         </td>';

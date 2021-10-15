@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 	<title>Game</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="text/javascript" src="function.js"></script>
 </head>
 <body>
-    <div class="header" >    <div class="div_logo"><img class="logo" src="Media/Images/OnePiceLogo.png" alt="gameLogo"></div>
-</div>
+    <div class="header" >    
+        <div class="div_logo"><img class="logo" src="Media/Images/OnePiceLogo.png" alt="gameLogo"></div>
+    </div>
     <div class="counter_container">
-        <p id="counter">s</p>
+        <p id="counter"></p>
     </div>
 
     <table class="game">
@@ -54,5 +54,6 @@
             }
         ?>
     </table>
+    <script type="text/javascript" src="function.js"></script>
 </body>
 </html>

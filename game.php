@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 	<title>Game</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="function.js"></script>
+
 </head>
 <body>
 
@@ -29,13 +31,15 @@
                 $cardIdCounter++;
             }
 
+            $cardCounter=0;
             for($i=1;$i<=$row;$i++){
                 echo "<tr>";
                 for($j=1;$j<=$col;$j++){
                     $rand=random_int(0,count($cards["cards"])-1);
                     echo '<td>
-                            <div flipped="false" cardid='.$cardIDs[$cards["cards"][$rand]].' resolved="false" onclick="">
-                                <img src="'.$CardDir.$cards["cards"][$rand].'">
+                            <div flipped="false" cardid='.$cardIDs[$cards["cards"][$rand]].' resolved="false" onclick="onlyTwoCards('.$cardCounter.')">
+                                <img class="back" src="Media/Images/cardReverse.jpg">
+                                <img class ="obverse" hidden src="'.$CardDir.$cards["cards"][$rand].'">
                             </div>
                         </td>';
                     unset($cards["cards"][$rand]);

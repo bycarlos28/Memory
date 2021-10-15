@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 	<title>Game</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-    <script type="text/javascript" src="function.js"></script>
-
 </head>
 <body>
-
+    <div>
+        <p id="counter"></p>
+    </div>
     <table class="game">
         <?php 
         
@@ -46,12 +46,10 @@
                     $cards["cards"] = array_values($cards["cards"]);
                     $cardCounter++;
                 }
-
                 echo "</tr>";
             }
-
         ?>
     </table>
-    
+    <script type="text/javascript" src="function.js"></script>
 </body>
 </html>

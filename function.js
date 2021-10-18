@@ -48,7 +48,7 @@ function checkLetter(first, second){
 		letters[cardId[1]].setAttribute("resolved",true);
 		
 		if(isWin()){
-			window.location.href="./final.php";
+			window.location.href="./final.php?a="+attempts;
 		}
 
 	}else {

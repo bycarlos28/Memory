@@ -1,6 +1,8 @@
 var back = document.getElementsByClassName('back');
 var obverse = document.getElementsByClassName('obverse');
 var letters = document.getElementsByClassName('letter');
+var counter = document.getElementById('counter');
+var attempts = 0;
 var playedCard = 0;
 var cardId = [];
 var firstCard = null;
@@ -31,6 +33,8 @@ function onlyTwoCards(i){
 		turnLetter(secondCard);
 		console.log("secondCard"+secondCard);
 		checkLetter(firstCard,secondCard);
+		attempts++;
+		Attempts();
 		playedCard = 0;
 	}
 }
@@ -72,4 +76,8 @@ function isWin(){
 		}
 	}
 	return FlagWin;
+}
+
+function Attempts(){
+	counter.innerHTML = attempts;
 }

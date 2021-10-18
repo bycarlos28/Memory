@@ -24,8 +24,11 @@ img{
 button{
 	height: 70px;
 	width: 300px;
-	background-color: #007849;
+	background-color: #FCCE00;
 	border-radius: 25px;
+	border: 2px solid #A239CA;
+	font-weight: bold;
+	font-size: 20px;
 }
 #body{
 	display: flex;

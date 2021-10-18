@@ -134,3 +134,7 @@ body {
 #info *{
   margin:auto;
 }
+
+.info + form{
+  background-color: black;
+}

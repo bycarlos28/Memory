@@ -1,0 +1,37 @@
+$imgUrl:"https://upload.wikimedia.org/wikipedia/commons/3/34/Steering_wheel_ship_1.png";
+
+@mixin rotation($angle){
+  -ms-transform: rotate($angle);
+  -moz-transform: rotate($angle);
+  -webkit-transform: rotate($angle);
+  transform: rotate($angle);
+}
+body{
+  background: #F5F1E3;
+}
+
+
+/*
+Actual Code for Steering and its rotation starts here.
+* Replace the wheel with our image.
+*/
+.steering{
+  width:300px;
+  height:300px;
+ background:url($imgUrl) center no-repeat;
+  background-size:100%;
+  position:fixed;
+  top:50%;
+  left:50%;
+  margin-top:-150px;
+  margin-left:-150px;
+  animation: rotateWheel 5s infinite;
+}
+@keyframes rotateWheel {
+    0% { @include rotation(0deg);}
+    20% { @include rotation(180deg);}
+    40% { @include rotation(90deg);}
+    60% { @include rotation(270deg);}
+    80% { @include rotation(180deg);}
+    100% { @include rotation(0deg);}
+}

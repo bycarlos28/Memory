@@ -9,45 +9,45 @@ var firstCard = null;
 var secondCard = null;
 function turnLetter(i) {
 	if (obverse[i].hasAttribute("hidden")) {
-		console.log("La carta"+i);
 		back[i].hidden = true;
+		letters[i].setAttribute("flipped",true);
 		obverse[i].removeAttribute("hidden");
 		playedCard++;
 		cardId.push(i);
-		console.log("La esta girando");
 	}
 
 
 }
 
 function onlyTwoCards(i){
-	console.log(playedCard);
-	if (playedCard<1){
-		firstCard=i;
-		turnLetter(firstCard);
-		console.log("firstCard"+firstCard);
 
-	}
-	else if (playedCard==1){
-		secondCard=i;
-		turnLetter(secondCard);
-		console.log("secondCard"+secondCard);
-		checkLetter(firstCard,secondCard);
-		attempts++;
-		Attempts();
-		playedCard = 0;
+	if(isCorrect()){
+
+		if (playedCard<1){
+			firstCard=i;
+			turnLetter(firstCard);
+		}
+		else if (playedCard==1){
+			secondCard=i;
+			turnLetter(secondCard);
+			checkLetter(firstCard,secondCard);
+			attempts++;
+			Attempts();
+			playedCard = 0;
+		}
+
 	}
 }
 
 function checkLetter(first, second){
-	console.log("fuera");
-	console.log(letters[cardId[0]],letters[cardId[1]])
 	if (letters[cardId[0]].getAttribute("cardid") == letters[cardId[1]].getAttribute("cardid")) {
-		console.log("dentro");
 		letters[cardId[0]].setAttribute("resolved",true);
 		letters[cardId[1]].setAttribute("resolved",true);
 		
 		if(isWin()){
+			
+			setTimeout(function (){doNothing()},3000);	// TODO No funciona
+
 			window.location.href="./final.php?a="+attempts;
 		}
 
@@ -60,11 +60,11 @@ function checkLetter(first, second){
 function flipback(first, second){
 		obverse[first].hidden=true;
 		back[first].removeAttribute("hidden");
+		letters[first].setAttribute("flipped",false);
 		obverse[second].hidden=true;
 		back[second].removeAttribute("hidden");
-		console.log("todo amagat");
+		letters[second].setAttribute("flipped",false);
 }
-
 
 function isWin(){
 	
@@ -82,3 +82,23 @@ function Attempts(){
 	counter.innerHTML = attempts;
 }
 
+function isCorrect(){
+
+	flipCounter=1	;
+
+	for(i=0 ; i<letters.length;i++){
+		if (letters[i].getAttribute("flipped")=="true" && letters[i].getAttribute("resolved")!="true"){
+			flipCounter++;
+			if (flipCounter>2){
+				return false;
+			}
+		}
+	}
+
+	return true;
+
+}
+
+function doNothing(){
+
+}

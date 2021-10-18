@@ -35,3 +35,116 @@ Actual Code for Steering and its rotation starts here.
     80% { @include rotation(180deg);}
     100% { @include rotation(0deg);}
 }
+
+$straw: gold;
+$red: red;
+$backdrop: #444;
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.pirate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
+
+.text {
+  margin-right: .6em;
+  height: 17vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  p {
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-size: 7vw;
+    color: $straw;
+    text-align: right;
+    margin: 0px;
+    padding: 0px;
+    line-height: .7
+  }
+}
+
+.hat {
+  height: 17vw;
+}
+.top {
+  overflow: hidden;
+  display: flex;
+  align-items: top;
+  height: 9.2vw;
+  width: 13.1vw;
+  margin-bottom: .7vw;
+  .top-color {
+    background-color: $straw;
+    border-top-right-radius: 30em;
+    height: 14em;
+    width: 14em;
+    .hash-1 {
+      position: relative;
+      transform: rotate(-30deg);
+      top: 5vw;
+      left: 9.4vw;
+      height: 2.6vw;
+      width: .2vw;
+      background-color: transparent;
+      border-right: .25em solid $backdrop;
+      border-bottom: .2em solid $backdrop;
+      border-top: .1em solid $backdrop;
+      border-top-right-radius: 3em;
+      border-bottom-right-radius: 3em;
+    }
+    .hash-2 {
+      position: relative;
+      transform: rotate(-45deg);
+      top: 2.4vw;
+      left: 7.6vw;
+      height: 2.4vw;
+      width: .1vw;
+      background-color: transparent;
+      border-right: .25em solid $backdrop;
+      border-top: .1em solid $backdrop;
+      border-top-right-radius: 3em;
+      border-bottom-right-radius: 3em;
+    }
+  }
+}
+
+.band {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: 3.8vw;
+  width: 13.8vw;
+  margin-bottom: .7vw;
+  .band-color {
+    background-color: $red;  
+    border-top-right-radius: 7.6vw;
+    height: 11.4vw;
+    width: 16vw;
+  }  
+}
+
+.brim {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: 2.5vw;
+  width: 30vw;
+  margin-bottom: .5em;
+  .brim-color {
+    background-color: $straw;  
+    border-top-right-radius: 20vw;
+    height: 3vw;
+    width: 30vw;
+  }
+}
+
+#pir{
+  color:$red;
+}

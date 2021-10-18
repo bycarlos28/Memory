@@ -81,3 +81,4 @@ function isWin(){
 function Attempts(){
 	counter.innerHTML = attempts;
 }
+

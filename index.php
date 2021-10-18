@@ -5,6 +5,7 @@
 	<title>Welcome to Memory</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:700" rel="stylesheet">
 
 </head>
 <body>
@@ -13,7 +14,28 @@
 
 	<div id="wheel" class="steering"></div>
 	<div id="body">
-		<img src="Media/Images/logoMemory.png">
+  
+    <div class="pirate">
+      <div class="text">
+        <p>The</p>
+        <p id="pir">Pirate</p>
+        <p>Memory</p>
+      </div>
+      <div class="hat">
+        <div class="top">
+          <div class="top-color">
+            <div class="hash-1"></div>
+            <div class="hash-2"></div>
+          </div>
+        </div>
+        <div class="band">
+          <div class="band-color"></div>
+        </div>
+        <div class="brim">
+          <div class="brim-color"></div>
+        </div>
+      </div>
+    </div>
 		<div id="Instructions">
 			
 			<h1>Instructions</h1>

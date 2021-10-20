@@ -13,9 +13,6 @@ h1{
 	font-size: 40px;
 	color: #A239CA;
 }
-p{
-	font-size: 20px;
-}
 img{
 	margin-right: 10%;
 	height: 400px;
@@ -61,10 +58,16 @@ img.logo{
 }
 
 .counter_container{
-    width: fit-content;
-    margin-right: 25px;
-    margin-left: auto;
-    right: 0px;
+    margin-right: 200px;
+	text-align: right;
+}
+#counter{
+	border-radius: 15px;
+	margin-left: 96%;
+	height: 40px;
+	font-size: 30px;
+	background-color: #0375B4;
+	text-align: center;
 }
 
 .logo{

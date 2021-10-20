@@ -10,7 +10,7 @@
         <div class="div_logo"><img class="logo" src="Media/Images/OnePiceLogo.png" alt="gameLogo"></div>
     </div>
     <div class="counter_container">
-        <p id="counter"></p>
+        <p id="counter">0</p>
     </div>
 
     <table class="game">

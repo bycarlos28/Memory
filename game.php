@@ -54,6 +54,6 @@
             }
         ?>
     </table>
-    <script type="text/javascript" src="function.js"></script>
+    <script type="text/javascript" src="Functions/function.js"></script>
 </body>
 </html>

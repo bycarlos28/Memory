@@ -4,8 +4,6 @@
 
  1. [ Install Guide ](#install-guide)
     1. [Linux](#linux)
-    2. [Windows](#windows)
-    3. [MacOs](#macos)
 
 
 
@@ -42,10 +40,3 @@ Copy repository to apache path:
 $ mv Memory /var/www/html/
 ```
 Open the browser and search localhost/Memory.
-### Windows
-
-Download & install Xampp from [here](https://www.apachefriends.org/es/download.html)
-
-
-
-### MacOs

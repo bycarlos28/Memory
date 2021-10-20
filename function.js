@@ -7,6 +7,7 @@ var playedCard = 0;
 var cardId = [];
 var firstCard = null;
 var secondCard = null;
+
 function turnLetter(i) {
 	if (obverse[i].hasAttribute("hidden")) {
 		back[i].hidden = true;
@@ -30,10 +31,12 @@ function onlyTwoCards(i){
 		else if (playedCard==1){
 			secondCard=i;
 			turnLetter(secondCard);
-			checkLetter(firstCard,secondCard);
-			attempts++;
-			Attempts();
-			playedCard = 0;
+			if(firstCard != secondCard){
+				checkLetter(firstCard,secondCard);
+				attempts++;
+				Attempts();
+				playedCard = 0;
+			}
 		}
 
 	}

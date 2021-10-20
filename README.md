@@ -37,7 +37,11 @@ Next up, we need to clone de repository:
 ```bash
 $ git clone https://github.com/bycarlos28/Memory.git
 ```
-
+Copy repository to apache path:
+```bash
+$ mv Memory /var/www/html/
+```
+Open the browser and search localhost/Memory.
 ### Windows
 
 Download & install Xampp from [here](https://www.apachefriends.org/es/download.html)

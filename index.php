@@ -53,7 +53,11 @@
 			<button>PLAY</button>
 		</form>
 	</div>
-
+  <div id="navranking">
+    <form action="ranking.php">
+      <button id="rankbut">RANKING</button>
+    </form>
+  </div>
 	<div class="wrap">
 </div>
 </div>

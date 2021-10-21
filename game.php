@@ -55,5 +55,9 @@
         ?>
     </table>
     <script type="text/javascript" src="Functions/function.js"></script>
+    <form action="index.php">
+        <button id=cancelGame>Cancel Game</button>
+    </form>
+    
 </body>
 </html>

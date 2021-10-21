@@ -1,0 +1,90 @@
+body{
+	margin: 0px;
+	padding: 0px;
+}
+
+#button{
+	padding-top: 3%;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+}
+h1{
+	font-size: 40px;
+	color: #A239CA;
+}
+img{
+	margin-right: 10%;
+	height: 400px;
+	width: 600px;
+}
+button{
+	height: 70px;
+	width: 300px;
+	background-color: #FCCE00;
+	border-radius: 25px;
+	border: 2px solid #A239CA;
+	font-weight: bold;
+	font-size: 20px;
+}
+#body{
+	display: flex;
+	justify-content: center;
+	height: 450px;
+}
+
+body{
+	background-color: #f5f5dc;
+}
+
+table.game{
+	vertical-align: middle;
+	margin: auto;
+}
+
+td img{
+	width: 200px;
+	height: auto;
+}
+
+img.logo{
+	max-width: 15%;
+	height: auto;
+	margin: 0px;
+}
+
+.separator{
+	height: 100px;
+}
+
+.counter_container{
+    margin-right: 200px;
+	text-align: right;
+}
+#counter{
+	border-radius: 15px;
+	margin-left: 96%;
+	height: 40px;
+	font-size: 30px;
+	background-color: #0375B4;
+	text-align: center;
+}
+
+.logo{
+	text-align: center;
+}
+
+.div_logo{
+	text-align: center;
+}
+
+.header{
+	background-color: #0375B4;
+	width: 100%;
+	height: 100px;
+	margin-bottom: 10%;
+}
+
+#wheel{
+	position: inherit;
+}

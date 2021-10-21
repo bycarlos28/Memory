@@ -9,7 +9,8 @@ body{
     height: 400px;
 }
 #buttons{
-    text-align: center;
+   text-align: center;
+    display: flex;
 }
 #header{
     text-align: center;
@@ -33,16 +34,16 @@ p{
     height: 50px;
 }
 
-#buttons > button{
+#buttons > form > button{
     width: 250px;
     height: 100px;
+}
+form{
+  width: 50%;
 }
 button{
     border-radius: 15px;
     background-color: #FFCE00;
-}
-#button1{
-margin-right: 400px;
 }
 .bg-6{
     background-color: transparent;

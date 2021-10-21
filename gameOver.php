@@ -20,8 +20,12 @@
         </div>
     </div>
     <div id="buttons">
-        <button id="button1" href="game.php">Home</button>
-        <button href="index.php">Ranking</button>
+        <form action="game.php">
+            <button id="button1">Home</button>
+        </form>
+        <form action="index.php">
+            <button>Ranking</button>
+            </form>
     </div>
 </body>
 </html>

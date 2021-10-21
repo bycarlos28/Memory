@@ -91,6 +91,15 @@
     </div>
   </div>
   </div>
+
+   <div id="halloffame">    
+    <form action="game.php">
+			<button>HallOfFame</button>
+		</form>
+  </div>
+
 </div>
+
+
 </body>
 </html>

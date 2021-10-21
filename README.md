@@ -16,7 +16,6 @@
 ## Install guide
 
 Let's start by installing all the dependences for this project:
- - git
  - apache2
  - php
 
@@ -28,19 +27,10 @@ $ apt install apache2
 $ apt install php
 ```
 
-Then we nedd to clone the repository using git. We can install git with the following comand:
+Next up, download de latest realese from this proyect and extract it
 
+Now copy the repository to the apache path:
 ```bash
-$ apt install git
+$ mv {folder extract name}/* /var/www/html/
 ```
-
-Next up, we need to clone de repository:
-
-```bash
-$ git clone https://github.com/bycarlos28/Memory.git
-```
-Copy repository to apache path:
-```bash
-$ mv Memory /var/www/html/
-```
-Open the browser and search localhost/Memory.
+Open the browser and search localhost.

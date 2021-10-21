@@ -33,4 +33,4 @@ Now copy the repository to the apache path:
 ```bash
 $ mv {folder extract name}/* /var/www/html/
 ```
-Open the browser and search localhost.
+Open the browser and search localhost/index.php

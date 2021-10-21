@@ -48,9 +48,14 @@
 			</ul>
 		</div>
 	</div>
+
 	<div id="button">
 		<form action="game.php">
-			<button>PLAY</button>
+      <div class="column play">
+        <label for="name">Name*</label>
+        <input id="name" type="text" placeholder="Name" required>
+        <button>PLAY</button>
+      </div>
 		</form>
 	</div>
 

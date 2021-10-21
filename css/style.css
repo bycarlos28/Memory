@@ -96,3 +96,21 @@ img.logo{
 	bottom: 20px;
 	right: 20px;
 }
+
+.column{
+	display: flex;
+	flex-direction: column;
+}
+
+#name{
+	margin-bottom: 20px;
+	border-radius: 15px;
+	border: 0px;
+	height: 30px;
+	padding-left: 10px;
+}
+
+.play label{
+	text-align: left;
+	padding-left: 10px;
+}

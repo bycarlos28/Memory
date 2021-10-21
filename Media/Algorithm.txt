@@ -1,0 +1,1 @@
+Nivel*((TiempoRestante*100)/TiempoTotal)/(Raizcuadrada(Errores+1))

@@ -48,17 +48,37 @@
 			</ul>
 		</div>
 	</div>
+  <div id="gamePlay">
+      <form method="POST">
+          <input type="radio" id="dificult1" name="dffcltradio" value="Marine">
+          <label for="dificult1">Marine(4x2)</label><br>
+          
+          <input type="radio" id="dificult2" name="dffcltradio" value="Pirate">
+          <label for="dificult2">Pirate(4x3)</label><br>
+          
+          <input type="radio" id="dificult3" name="dffcltradio" value="Vicealmirante">
+          <label for="dificult3">Vicealmirante(4x4)</label><br>
+      
+          <input type="radio" id="dificult4" name="dffcltradio" value="Capitan">
+          <label for="dificult4">Capitan(5x4)</label><br>
 
-	<div id="button">
-		<form action="game.php">
-      <div class="column play">
-        <label for="name">Name*</label>
-        <input id="name" type="text" placeholder="Name" required>
-        <button>PLAY</button>
-      </div>
-		</form>
-	</div>
+          <input type="radio" id="dificult5" name="dffcltradio" value="Almirante">
+          <label for="dificult5">Almirante(6x5)</label><br>
 
+          <input type="radio" id="dificult6" name="dffcltradio" value="Yonkou">
+          <label for="dificult6">Yonkou(8x5)</label><br>
+        </form> 
+    <div id="button">
+  		<form action="game.php">
+  			<button>PLAY</button>
+  		</form>
+  	</div>
+  </div>
+  <div id="navranking">
+    <form action="ranking.php">
+      <button id="rankbut">RANKING</button>
+    </form>
+  </div>
 	<div class="wrap">
 </div>
 </div>

@@ -21,8 +21,8 @@
             $CardDir = "Media/Images/";
 
             $cardsTotal=loadImages($CardDir);
-            print_r($cardsTotal);
 
+            
             $row=2;
             $col=4;
 
@@ -39,19 +39,18 @@
                 $cardsTotal["cards"] = array_values($cardsTotal["cards"]);
             }
             
-            echo "cartas";
-            print_r($cards);
-
+        
             $cardIDs;
+
+            $cards=modeAdvanced($cards,2);
+
 
             $cardsDuped=dupeCards($cards);
 
             $cards=$cardsDuped[0];
             $cardIDs=$cardsDuped[1];
 
-            print_r($cards);
 
-            $cards=modeAdvanced($cards,2);
 
 
             $cardCounter=0;
@@ -70,10 +69,9 @@
                     if($cards["advanced"][$rand]==0){
                         unset($cards["cards"][$rand]);
                     }else{
-                        for($k=0; $k<count($cards["cards"]);$k++){
-                            if($cards["cards"][$k]==$cards["cards"][$rand]){
-                                echo "borrando la carta ".$cards["cards"][$k];
-                                unset($cards["cards"][$k]);
+                        foreach($cards["cards"] as $card){
+                            if($card==$cards["advanced"][$rand]){
+                                unset($cards[array_search($card,$cards["cards"])]);
                             }
                         }
                     }

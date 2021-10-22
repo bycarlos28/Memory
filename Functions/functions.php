@@ -15,6 +15,7 @@ function loadImages($dir){
                 $cards["reverse"]=$file;
             }else{
                 array_push($cards["cards"],$file);
+                array_push($cards["advanced"],0);
             }
         }
     }
@@ -33,8 +34,7 @@ function dupeCards($cards){
     foreach($cards["cards"] as $card){
         $cardIDs[$card]=$cardIdCounter;
         array_push($cards["cards"],$card);
-        array_push($cards["advanced"],0);
-        array_push($cards["advanced"],0);
+        array_push($);
         $cardIdCounter++;
     }
 
@@ -44,13 +44,26 @@ function dupeCards($cards){
 
 function modeAdvanced($cards,$dificulty){
 
-    for($l=0;$l<=$dificulty;$l++){
+    $index=[];
 
-        $rand=random_int(0,(count($cards["cards"])-1)/2);
 
-        print_r($rand);
+    for($l=0;$l<$dificulty;$l++){
 
-        $cards["advanced"][$rand]=1;
+        $rand=random_int(0,count($cards["cards"])-1);
+
+        if(in_array($rand,$index)){
+            $l--;
+        }else{
+            unset($cards["cards"][$rand]);
+            $cards["cards"]=array_values($cards["cards"]);
+            $cards["advanced"][$rand]=1;
+            array_push($rand,$index);
+        }
+
+        
+
+
+
 
     }
 

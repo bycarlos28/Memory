@@ -20,11 +20,29 @@
 
             $CardDir = "Media/Images/";
 
-            $cards=loadImages($CardDir);
+            $cardsTotal=loadImages($CardDir);
+            print_r($cardsTotal);
 
             $row=2;
             $col=4;
 
+            $total=($col*$row)/2;
+
+            $cards=$cardsTotal;
+            $cards['cards']=[];
+            $cardIndex=[];
+            for ($i=0; $i < $total ; $i++) { 
+                $cardpush=random_int(0,count($cardsTotal['cards'])-1);
+                
+                array_push($cards['cards'],$cardsTotal['cards'][$cardpush]);  
+                unset($cardsTotal['cards'][$cardpush]);
+                $cardsTotal["cards"] = array_values($cardsTotal["cards"]);
+            }
+            
+            echo "cartas";
+            print_r($cards);
+
+            $cardIDs;
 
             $cardsDuped=dupeCards($cards);
 
@@ -68,5 +86,9 @@
         ?>
     </table>
     <script type="text/javascript" src="Functions/function.js"></script>
+    <form action="index.php">
+        <button id=cancelGame>Cancel Game</button>
+    </form>
+    
 </body>
 </html>

@@ -114,3 +114,24 @@ img.logo{
 	text-align: left;
 	padding-left: 10px;
 }
+
+#cancelGame{
+	float: right;
+	background-color: #A239CA;
+	height: 80px;
+	width: 200px;
+	margin-bottom: 10px;
+	margin-right: 40px;
+}
+
+#navranking{
+	float: right;
+}
+#rankbut{
+	height: 40px;
+	width: 120px;
+	background-color: #A239CA;
+	border-radius: 1px solid black;
+	margin-right: 40px;
+	margin-bottom: 40px;
+}

@@ -98,7 +98,7 @@
   </div>
 
    <div id="halloffame">    
-    <form action="game.php">
+    <form action="HallOfFame.php">
 			<button>HallOfFame</button>
 		</form>
   </div>

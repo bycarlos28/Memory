@@ -34,7 +34,7 @@ function dupeCards($cards){
     foreach($cards["cards"] as $card){
         $cardIDs[$card]=$cardIdCounter;
         array_push($cards["cards"],$card);
-        array_push($);
+        array_push();
         $cardIdCounter++;
     }
 

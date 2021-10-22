@@ -14,17 +14,18 @@
     </div>
 
     <table class="game">
-        <?php 
-        
+        <?php
+        $table=$_GET['dffcltradio']; 
             include("Functions/functions.php");
 
             $CardDir = "Media/Images/";
 
             $cardsTotal=loadImages($CardDir);
-            print_r($cardsTotal);
 
-            $row=2;
-            $col=4;
+            $col=(substr($table, 0,1));
+            $row=(substr($table, -1));
+           
+            
             $cardCounter=1;
 
             $total=($col*$row)/2;
@@ -40,9 +41,6 @@
                 $cardsTotal["cards"] = array_values($cardsTotal["cards"]);
             }
             
-            echo "cartas";
-            print_r($cards);
-
             $cardIDs;
 
             $cardIdCounter=1;

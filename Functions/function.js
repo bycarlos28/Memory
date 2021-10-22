@@ -4,6 +4,7 @@ var letters = document.getElementsByClassName('letter');
 var counter = document.getElementById('counter');
 var attempts = 0;
 var playedCard = 0;
+var failures = 0;
 var cardId = [];
 var firstCard = null;
 var secondCard = null;
@@ -51,11 +52,12 @@ function checkLetter(first, second){
 			
 			setTimeout(function (){doNothing()},3000);	// TODO No funciona
 
-			window.location.href="./final.php?a="+attempts;
+			window.location.href="./final.php?a="+attempts+"&f="+failures;
 		}
 
 	}else {
 		setTimeout(function(){flipback(first,second);},2000);
+		failures++;		
 		
 	}
 	cardId = [];

@@ -35,7 +35,7 @@
 		<?php 
 			if (!empty($_POST['userName'])){
 				$usersFile=file_get_contents("HallOfFame.txt");
-				$userInfo="NoLevel,"."NoTime,".$_GET['a'].",".$_POST['userName'].";";
+				$userInfo="NoLevel,"."NoTime,".$_GET['f'].",".$_POST['userName'].";";
 				$usersFile .= $userInfo;
 				file_put_contents("HallOfFame.txt", $usersFile);
 				echo "<p class='submitVer' >User ".$_POST['userName']." correctly introduced.</p>";

@@ -6,7 +6,8 @@ var obverse = document.getElementsByClassName('obverse');
 var letters = document.getElementsByClassName('letter');
 var counter = document.getElementById('counter');
 var container_video = document.getElementById('container_video');
- var video = document.getElementsByTagName("video");
+var video = document.getElementsByTagName("video");
+var attemptsVideo = 0;
 var attempts = 0;
 var playedCard = 0;
 var failures = 0;
@@ -159,9 +160,13 @@ function updateClock(totalTime) {
   }
 
   function easterEgg(){
-	  container_video.removeAttribute("hidden");
-	  video[0].play(); 
-	  setTimeout(hiddenVideo,10000);
+	  if (attemptsVideo == 4) {
+		  container_video.removeAttribute("hidden");
+		  video[0].play(); 
+		  setTimeout(hiddenVideo,10000);
+	  }else{
+		  attemptsVideo++;
+	  }
   }
   
   function hiddenVideo(){

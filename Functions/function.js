@@ -22,33 +22,35 @@ noContext.addEventListener('contextmenu', e => {
 
 function rightClick(c){
 	if (playedCard==0){
-		if(letters[c].getAttribute("flipped")=="false"){
-			if (letters[c].getAttribute("marked")== 'false'){
-				if (totalMarks<rows){
-					if (letters[c].getAttribute('advanced')==1){
-						letters[c].setAttribute("resolved",true);
+		if (document.getElementById('tableMemory').getAttribute('adv')=='on'){
+			if(letters[c].getAttribute("flipped")=="false"){
+				if (letters[c].getAttribute("marked")== 'false'){
+					if (totalMarks<rows){
+						if (letters[c].getAttribute('advanced')==1){
+							letters[c].setAttribute("resolved",true);
+						}
+						letters[c].setAttribute("marked",true);
+						letters[c].classList.add("cardFlag");
+
+
+						if(isWin()){
+							console.log("Ganado");
+						
+							setTimeout(function (){doNothing()},3000);	// TODO No funciona
+
+							window.location.href="./final.php?a="+attempts+"&f="+failures;
+						}
+						totalMarks++;
 					}
-					letters[c].setAttribute("marked",true);
-					letters[c].classList.add("cardFlag");
+				}else {
+					letters[c].setAttribute("marked",false);
+					letters[c].classList.remove("cardFlag");
 
-
-					if(isWin()){
-						console.log("Ganado");
-					
-						setTimeout(function (){doNothing()},3000);	// TODO No funciona
-
-						window.location.href="./final.php?a="+attempts+"&f="+failures;
-					}
-					totalMarks++;
+					totalMarks--;
 				}
-			}else {
-				letters[c].setAttribute("marked",false);
-				letters[c].classList.remove("cardFlag");
-
-				totalMarks--;
-			}
+		
 		}
-			
+	}		
 	}
 	
 }

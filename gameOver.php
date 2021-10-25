@@ -20,10 +20,10 @@
         </div>
     </div>
     <div id="buttons">
-        <form action="game.php">
+        <form action="index.php">
             <button id="button1">Home</button>
         </form>
-        <form action="index.php">
+        <form action="HallOFame.php">
             <button>Ranking</button>
             </form>
     </div>

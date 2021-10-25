@@ -1,3 +1,6 @@
+var difficulty = document.getElementsByClassName('game');
+var totalTime = determineTime();
+window.onload = updateClock(totalTime);
 var back = document.getElementsByClassName('back');
 var obverse = document.getElementsByClassName('obverse');
 var letters = document.getElementsByClassName('letter');
@@ -107,19 +110,48 @@ function isCorrect(){
 function doNothing(){
 
 }
-var container = document.getElementById('container');
-var video = document.getElementById('video');
-var counterVideo = 0;
-function easterEgg(){
-	counterVideo++;
-	if (counterVideo == 5){
-		container.removeAttribute("hidden");
-		video.play();
-		setTimeout(hiddenVideo,10000);
+function determineTime() {
+	if (difficulty[0].getAttribute('difficulty') == '4x2' && difficulty[0].getAttribute('adv') != '') {
+	  time=10;
+	}else if (difficulty[0].getAttribute('difficulty') == '4x2' && difficulty[0].getAttribute('adv') == '') {
+	  time = 20;
+	}else if (difficulty[0].getAttribute('difficulty') == '4x3' && difficulty[0].getAttribute('adv') != '') {
+	  time = 30;
+	}else if (difficulty[0].getAttribute('difficulty') == '4x3' && difficulty[0].getAttribute('adv') == ''){
+	  time = 40;
+	}else if (difficulty[0].getAttribute('difficulty') == '4x4' && difficulty[0].getAttribute('adv') != '') {
+	  time = 50;
+	}else if (difficulty[0].getAttribute('difficulty') == '4x4' && difficulty[0].getAttribute('adv') == '') {
+	  time = 60;
+	}else if (difficulty[0].getAttribute('difficulty') == '5x4' && difficulty[0].getAttribute('adv') != '') {
+	  time = 70;
+	}else if (difficulty[0].getAttribute('difficulty') == '5x4' && difficulty[0].getAttribute('adv') == '') {
+	  time = 80;
+	}else if (difficulty[0].getAttribute('difficulty') == '6x5' && difficulty[0].getAttribute('adv') != '') {
+	  time = 90;
+	}else if (difficulty[0].getAttribute('difficulty') == '6x5' && difficulty[0].getAttribute('adv') == '') {
+	  time = 100;
+	}else if (difficulty[0].getAttribute('difficulty') == '8x5' && difficulty[0].getAttribute('adv') != '') {
+	  time = 120;
+	}else if (difficulty[0].getAttribute('difficulty') == '8x5' && difficulty[0].getAttribute('adv') == '') {
+		time = 130
 	}
-}
+	return time;
+  }
 
-function hiddenVideo(){
-	video.pause();
-	container.setAttribute("hidden",true);
-}
+function updateClock(totalTime) {
+	console.log("updateclock");
+	document.getElementById('countdown').innerHTML = totalTime;
+	if(totalTime==0){
+		if(isWin()){
+			
+			setTimeout(function (){doNothing()},3000);	// TODO No funciona
+
+			window.location.href="./final.php?a="+attempts+"&f="+failures+"&t="+totalTime;
+		}else{
+			window.location.href="./gameOver.php?a="+attempts+"&f="+failures+"&t="+totalTime;
+		}
+	}else{
+	  setTimeout("updateClock(totalTime--)",1000);
+	}
+  }

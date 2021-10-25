@@ -15,8 +15,19 @@ noContext.addEventListener('contextmenu', e => {
   e.preventDefault();
 });
 
-function rightClick(i){
-	console.log("hola");
+function rightClick(c){
+	var allElements = document.getElementsByTagName('div');
+	var cardR;
+	console.log(allElements);
+	for (var i = 0; i < allElements.length; i++) {
+		if (allElements[i].getAttribute('cardid') == c){
+			cardR = allElements[i];
+			break;
+		} 
+	}
+	cardR.setAttribute('marked',true);
+	console.log("cartaMalita");
+
 }
 
 

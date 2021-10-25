@@ -84,7 +84,7 @@
                         $ad=1;
                     }
                     echo '<td>
-                            <div class="letter" advanced="'.$ad.'"  flipped="false" cardid='.$cardIDs[$cards["cards"][$rand]].' resolved="false" onclick="onlyTwoCards('.$cardCounter.')" oncontextmenu="rightClick('.$cardCounter.')">
+                            <div class="letter" advanced="'.$ad.'"  flipped="false" cardid='.$cardIDs[$cards["cards"][$rand]].' resolved="false" marked="false" onclick="onlyTwoCards('.$cardCounter.')" oncontextmenu="rightClick('.$cardCounter.')">
                                 <img class="back" src="Media/Images/cardReverse.jpg">
                                 <img class ="obverse" hidden src="'.$CardDir.$cards["cards"][$rand].'">
                             </div>

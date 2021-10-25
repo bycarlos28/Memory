@@ -15,7 +15,7 @@
 
     <table class="game">
         <?php
-        $table=$_GET['dffcltradio']; 
+        $table=$_GET['dffcltradio'];
             include("Functions/functions.php");
 
 

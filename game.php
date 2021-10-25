@@ -37,6 +37,7 @@
             $cards=$cardsTotal;
             $cards['cards']=[];
             $cardIndex=[];
+
             for ($i=0; $i < $total ; $i++) { 
                 $cardpush=random_int(0,count($cardsTotal['cards'])-1);
                 array_push($cards['cards'],$cardsTotal['cards'][$cardpush]);  
@@ -78,7 +79,9 @@
             for($i=1;$i<=$row;$i++){
                 echo "<tr>";
                 for($j=1;$j<=$col;$j++){
+                    
                     $rand=random_int(0,count($cards["cards"])-1);
+                                                           
                     $ad=0;
                     if(in_array($cardIDs[$cards["cards"][$rand]],$advanceds)){
                         $ad=1;

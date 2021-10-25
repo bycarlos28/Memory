@@ -7,7 +7,12 @@
 </head>
 <body>
     <div class="header" >    
-        <div class="div_logo"><img class="logo" src="Media/Images/OnePiceLogo.png" alt="gameLogo"></div>
+        <div class="div_logo"><img onclick="easterEgg()" class="logo" src="Media/Images/OnePiceLogo.png" alt="gameLogo"></div>
+    </div>
+    <div id="container_video" hidden>
+        <video height=600>
+            <source src="Media/Video/gomu.mp4" type="video/mp4">
+        </video>
     </div>
     <div class="counter_container">
         <span id="countdown"></span>

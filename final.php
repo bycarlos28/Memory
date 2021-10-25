@@ -16,7 +16,7 @@
 	
 			<div>
 				<h2>Level</h2>
-				<p id="level">0</p>
+				<p id="level"></p>
 			</div>	
 			<div>
 				<h2>Time</h2>

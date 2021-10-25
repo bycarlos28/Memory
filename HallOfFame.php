@@ -17,6 +17,7 @@
         <td>Time</td>
         <td>Fails</td>
         <td>Name</td>
+        <td>Puntos</td>
     </tr>
 
     <?php
@@ -28,6 +29,8 @@
             foreach(explode(",",$player) as $parameter){
                 echo "<td>".$parameter."</td>";
             }
+
+
             echo "</tr>";
         }
 

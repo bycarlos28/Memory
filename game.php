@@ -6,6 +6,10 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+    
+
+
+
     <div class="header" >    
         <div class="div_logo"><img class="logo" src="Media/Images/OnePiceLogo.png" alt="gameLogo"></div>
     </div>

@@ -1,1 +1,1 @@
-Nivel*((TiempoRestante*100)/TiempoTotal)/(Raizcuadrada(Errores+1))
+Nivel*((TiempoRestante*100)/TiempoTotal)/(Raizcuadrada(Errores+1))*ModeAdvanced

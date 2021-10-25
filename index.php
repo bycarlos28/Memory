@@ -51,7 +51,7 @@
   <div id="gamePlay">
       <form method="GET" action="game.php">
           <div id="diffOptions">
-            <input type="radio" id="dificult1" name="dffcltradio" value="4x2">
+            <input type="radio" id="dificult1" name="dffcltradio" value="4x2" required>
             <label for="dificult1">Marine(4x2)</label><br>
             
             <input type="radio" id="dificult2" name="dffcltradio" value="4x3">
@@ -68,6 +68,9 @@
 
             <input type="radio" id="dificult6" name="dffcltradio" value="8x5">
             <label for="dificult6">Yonkou(8x5)</label><br>
+
+            <input type="checkbox" name="adv" id="adv">
+            <label for="adv">Mode Advanced</label>
           </div>
           <div id="button">      
             <button type="submit" >PLAY</button>

@@ -34,7 +34,6 @@ function dupeCards($cards){
     foreach($cards["cards"] as $card){
         $cardIDs[$card]=$cardIdCounter;
         array_push($cards["cards"],$card);
-        array_push();
         $cardIdCounter++;
     }
 
@@ -42,31 +41,24 @@ function dupeCards($cards){
 
 }
 
-function modeAdvanced($cards,$dificulty){
+function modeAdvanced($cardsDuped,$cardsTotal,$row){
 
-    $index=[];
-
-
-    for($l=0;$l<$dificulty;$l++){
-
-        $rand=random_int(0,count($cards["cards"])-1);
-
-        if(in_array($rand,$index)){
-            $l--;
-        }else{
-            unset($cards["cards"][$rand]);
-            $cards["cards"]=array_values($cards["cards"]);
-            $cards["advanced"][$rand]=1;
-            array_push($rand,$index);
-        }
-
-        
+    $cards=$cardsDuped[0];
+    $cardIDs=$cardsDuped[1];
 
 
-
-
+    $cardIdCounter=end($cardIDs);
+    $cardIdCounter++;
+    for($i=1;$i<=$row;$i++){
+        $rand=random_int(0,count($cardsTotal['cards'])-1);
+        $cardIDs[$cardsTotal["cards"][$rand]]=$cardIdCounter;
+        array_push($cards["cards"],$cardsTotal["cards"][$rand]);
+        unset($cardsTotal["cards"][$rand]);
+        $cardIdCounter++;
     }
 
-    return $cards;
+    
+
+    return [$cards,$cardIDs];
 
 }

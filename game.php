@@ -9,12 +9,16 @@
     <div class="header" >    
         <div class="div_logo"><img class="logo" src="Media/Images/OnePiceLogo.png" alt="gameLogo"></div>
     </div>
+
     <div class="counter_container">
+        <span id="countdown"></span>
         <p id="counter">0</p>
     </div>
-
-    <table id="tableMemory" class="game">
+    <?php
+        echo'<table id="tableMemory" class="game" adv="'.$_GET["adv"].'" difficulty="'.$_GET["dffcltradio"].'")>';
+    ?>
         <?php
+        print_r(isset($_GET["adv"]));
         $table=$_GET['dffcltradio']; 
             include("Functions/functions.php");
 
@@ -52,7 +56,6 @@
 
             $cards=$cardsDuped[0];
             $cardIDs=$cardsDuped[1];
-
             if(isset($_GET["adv"])){
                 $col++;
                 $cardss=modeAdvanced([$cards,$cardIDs],$cardsTotal,$row);
@@ -84,7 +87,11 @@
                         $ad=1;
                     }
                     echo '<td>
+<<<<<<< HEAD
                             <div class="letter" advanced="'.$ad.'"  flipped="false" cardid='.$cardIDs[$cards["cards"][$rand]].' resolved="false" onclick="onlyTwoCards('.$cardCounter.')" oncontextmenu="rightClick('.$cardCounter.')">
+=======
+                            <div class="letter" advanced="'.$ad.'" flipped="false" cardid="'.$cardIDs[$cards["cards"][$rand]].'" resolved="false" onclick="onlyTwoCards('.$cardCounter.')">
+>>>>>>> origin/CarlosF
                                 <img class="back" src="Media/Images/cardReverse.jpg">
                                 <img class ="obverse" hidden src="'.$CardDir.$cards["cards"][$rand].'">
                             </div>

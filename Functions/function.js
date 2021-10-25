@@ -11,15 +11,51 @@ var failures = 0;
 var cardId = [];
 var firstCard = null;
 var secondCard = null;
+var rows = document.getElementsByTagName('tr').length;
 
+var totalMarks = 0;
 const noContext = document.getElementById('tableMemory');
 
 noContext.addEventListener('contextmenu', e => {
   e.preventDefault();
 });
 
-function rightClick(i){
-	console.log("hola");
+function rightClick(c){
+	if (playedCard==0){
+
+		if (letters[c].getAttribute("marked")== 'false'){
+			if (totalMarks<rows){
+				if (letters[c].getAttribute('advanced')==1){
+					letters[c].setAttribute("resolved",true);
+				}
+				letters[c].setAttribute("marked",true);
+				letters[c].classList.add("cardFlag");
+				back[c].hidden = true;
+				letters[c].setAttribute("flipped",true);
+				obverse[c].removeAttribute("hidden");
+				attempts++;
+				Attempts();
+
+				if(isWin()){
+					console.log("Ganado");
+				
+					setTimeout(function (){doNothing()},3000);	// TODO No funciona
+
+					window.location.href="./final.php?a="+attempts+"&f="+failures;
+				}
+				totalMarks++;
+			}
+		}else {
+			letters[c].setAttribute("marked",false);
+			letters[c].classList.remove("cardFlag");
+			obverse[c].hidden=true;
+			back[c].removeAttribute("hidden");
+			letters[c].setAttribute("flipped",false);
+			letters[c].setAttribute("resolved",false);
+			totalMarks--;º
+		}
+	}
+	
 }
 
 
@@ -106,6 +142,9 @@ function isCorrect(){
 	flipCounter=1	;
 
 	for(i=0 ; i<letters.length;i++){
+		if (letters[i].getAttribute('marked')=="true"){
+			continue;
+		}
 		if (letters[i].getAttribute("flipped")=="true" && letters[i].getAttribute("resolved")!="true"){
 			flipCounter++;
 			if (flipCounter>2){

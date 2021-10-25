@@ -9,6 +9,17 @@ var cardId = [];
 var firstCard = null;
 var secondCard = null;
 
+const noContext = document.getElementById('tableMemory');
+
+noContext.addEventListener('contextmenu', e => {
+  e.preventDefault();
+});
+
+function rightClick(i){
+	console.log("hola");
+}
+
+
 function turnLetter(i) {
 	if (obverse[i].hasAttribute("hidden")) {
 		back[i].hidden = true;

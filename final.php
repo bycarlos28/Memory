@@ -46,7 +46,7 @@
 	  	<button>HOME</button>
 	  </form>
 		<form id="rankBut" action="HallOfFame.php">
-	  	<button>RANKING</button>
+	  	<button>Hall of Fame</button>
 	  </form>
 </div>
 

@@ -11,6 +11,7 @@ body{
 #buttons{
    text-align: center;
     display: flex;
+    margin-top: 30%;
 }
 #header{
     text-align: center;

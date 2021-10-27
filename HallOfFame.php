@@ -28,20 +28,50 @@
         
         $file = file_get_contents("HallOfFame.txt");
 
+        $ranking=[];
+
+        
+
         foreach(explode(";",$file) as $player){
             if($player!=""){
-                echo "<tr>";
+
                 $parameters=explode(",",$player);
-                foreach($parameters as $parameter){
-                    echo "<td>".$parameter."</td>";
-                }
+                
+                array_push($ranking,array("dif"=>$parameters[0],"t"=>$parameters[1],"ft"=>$parameters[2],"f"=>$parameters[3],"ma"=>$parameters[4],"name"=>$parameters[5],"points"=>calculatePoints($parameters[3],$parameters[0],$parameters[2],$parameters[1],$parameters[4])));
+                
 
-                echo "<td>".calculatePoints($parameters[3],$parameters[0],$parameters[2],$parameters[1],$parameters[4])."</td>";
-
-                echo "</tr>";
             }
 
         }
+
+        $sortArray = array();
+
+        foreach($ranking as $person){
+            foreach($person as $key=>$value){
+                if(!isset($sortArray[$key])){
+                    $sortArray[$key] = array();
+                }
+                $sortArray[$key][] = $value;
+            }
+        }
+
+        $orderby = "points";
+
+        array_multisort($sortArray[$orderby],SORT_DESC,$ranking);
+
+        foreach($ranking as $player){
+
+            echo "<tr>";
+            foreach($player as $parameter){
+                echo "<td>".$parameter."</td>";
+            }
+
+            echo "</tr>";
+            
+
+        }
+
+
 
     ?>
     </table>

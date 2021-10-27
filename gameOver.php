@@ -9,16 +9,6 @@
     <div id="header" class="bg-6">
         <h1 class="glitch" data-text="YOU LOSE">YOU LOSE</h1>
     </div>
-    <div id="info">
-        <div id="lvl">
-            <h2>Level</h2>
-            <p id="level">0</p>
-        </div>	
-        <div id="fls">
-            <h2>Fails</h2>
-            <p id="Fails"><?php echo $_GET['a']; ?></p>
-        </div>
-    </div>
     <div id="buttons">
         <form action="index.php">
             <button id="button1">Home</button>

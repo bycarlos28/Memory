@@ -165,51 +165,51 @@ function doNothing(){
 }
 function determineTime() {
 	if (difficulty[0].getAttribute('difficulty') == '4x2' && difficulty[0].getAttribute('adv') != '') {
-	  time=10;
+	  time=30;
 	  difficulty=1;
 	  mAdvanced=2;
 	}else if (difficulty[0].getAttribute('difficulty') == '4x2' && difficulty[0].getAttribute('adv') == '') {
-	  time = 20;
+	  time = 30;
 	  difficulty=1;
 	  mAdvanced=1;
 	}else if (difficulty[0].getAttribute('difficulty') == '4x3' && difficulty[0].getAttribute('adv') != '') {
-	  time = 30;
+	  time = 40;
 	  difficulty=2;
 	  mAdvanced=2;
 	}else if (difficulty[0].getAttribute('difficulty') == '4x3' && difficulty[0].getAttribute('adv') == ''){
-	  time = 40;
+	  time = 50;
 	  difficulty=2;
 	  mAdvanced=1;
 	}else if (difficulty[0].getAttribute('difficulty') == '4x4' && difficulty[0].getAttribute('adv') != '') {
-	  time = 50;
+	  time = 60;
 	  difficulty=3;
 	  mAdvanced=2;
 	}else if (difficulty[0].getAttribute('difficulty') == '4x4' && difficulty[0].getAttribute('adv') == '') {
-	  time = 60;
+	  time = 70;
 	  difficulty=3;
 	  mAdvanced=1;
 	}else if (difficulty[0].getAttribute('difficulty') == '5x4' && difficulty[0].getAttribute('adv') != '') {
-	  time = 70;
+	  time = 80;
 	  difficulty=4;
 	  mAdvanced=2;
 	}else if (difficulty[0].getAttribute('difficulty') == '5x4' && difficulty[0].getAttribute('adv') == '') {
-	  time = 80;
+	  time = 90;
 	  difficulty=4;
 	  mAdvanced=1;
 	}else if (difficulty[0].getAttribute('difficulty') == '6x5' && difficulty[0].getAttribute('adv') != '') {
-	  time = 90;
+	  time = 100;
 	  difficulty=5;
 	  mAdvanced=2;
 	}else if (difficulty[0].getAttribute('difficulty') == '6x5' && difficulty[0].getAttribute('adv') == '') {
-	  time = 100;
+	  time = 110;
 	  difficulty=5;
 	  mAdvanced=1;
 	}else if (difficulty[0].getAttribute('difficulty') == '8x5' && difficulty[0].getAttribute('adv') != '') {
-	  time = 120;
+	  time = 130;
 	  difficulty=6;
 	  mAdvanced=2;
 	}else if (difficulty[0].getAttribute('difficulty') == '8x5' && difficulty[0].getAttribute('adv') == '') {
-		time = 130
+		time = 130;
 		difficulty=6;
 		mAdvanced=1;
 	}

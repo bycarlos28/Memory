@@ -13,7 +13,7 @@
         <form action="index.php">
             <button id="button1">Home</button>
         </form>
-        <form action="HallOFame.php">
+        <form action="HallOfFame.php">
             <button>Ranking</button>
             </form>
     </div>

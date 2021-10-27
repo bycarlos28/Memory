@@ -23,7 +23,7 @@
 				<p id="time"><?php echo $_GET['t']; ?></p></div>
 			<div>
 				<h2>Fails</h2>
-				<p id="Tries"><?php echo $_GET['a']; ?></p>
+				<p id="Tries"><?php echo $_GET['f']; ?></p>
 			</div>
 		</div>
 		<form method="POST">

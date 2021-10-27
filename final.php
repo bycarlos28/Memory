@@ -16,13 +16,13 @@
 	
 			<div>
 				<h2>Level</h2>
-				<p id="level"></p>
+				<p id="level"><?php echo $_GET['dif']; ?></p>
 			</div>	
 			<div>
 				<h2>Time</h2>
-				<p id="time">0</p></div>
+				<p id="time"><?php echo $_GET['t']; ?></p></div>
 			<div>
-				<h2>Tries</h2>
+				<h2>Fails</h2>
 				<p id="Tries"><?php echo $_GET['a']; ?></p>
 			</div>
 		</div>

@@ -65,3 +65,9 @@ function modeAdvanced($cardsDuped,$cardsTotal,$row){
     return [$cards,$cardIDs];
 
 }
+
+function calculatePoints($errors,$dificulty,$timeTotal,$time,$advanced){
+
+
+
+}

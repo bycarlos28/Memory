@@ -1,5 +1,6 @@
 var difficulty = document.getElementsByClassName('game');
 var totalTime = determineTime();
+var totalFinalTime = totalTime;
 window.onload = updateClock(totalTime);
 var back = document.getElementsByClassName('back');
 var obverse = document.getElementsByClassName('obverse');
@@ -15,6 +16,8 @@ var cardId = [];
 var firstCard = null;
 var secondCard = null;
 var rows = document.getElementsByTagName('tr').length;
+var difficulty;
+var mAdvanced;
 
 var totalMarks = 0;
 const noContext = document.getElementById('tableMemory');
@@ -41,7 +44,7 @@ function rightClick(c){
 						
 							setTimeout(function (){doNothing()},3000);	// TODO No funciona
 
-							window.location.href="./final.php?a="+attempts+"&f="+failures;
+							window.location.href="./final.php?a="+attempts+"&f="+failures+"&t="+totalTime+"&ft="+totalFinalTime+"&dif="+difficulty+"&ma="+mAdvanced;
 						}
 						totalMarks++;
 					}
@@ -102,7 +105,7 @@ function checkLetter(first, second){
 			
 			setTimeout(function (){doNothing()},3000);	// TODO No funciona
 
-			window.location.href="./final.php?a="+attempts+"&f="+failures;
+			window.location.href="./final.php?a="+attempts+"&f="+failures+"&t="+totalTime+"&ft="+totalFinalTime+"&dif="+difficulty+"&ma="+mAdvanced;
 		}
 
 	}else {
@@ -163,28 +166,52 @@ function doNothing(){
 function determineTime() {
 	if (difficulty[0].getAttribute('difficulty') == '4x2' && difficulty[0].getAttribute('adv') != '') {
 	  time=10;
+	  difficulty=1;
+	  mAdvanced=2;
 	}else if (difficulty[0].getAttribute('difficulty') == '4x2' && difficulty[0].getAttribute('adv') == '') {
 	  time = 20;
+	  difficulty=1;
+	  mAdvanced=1;
 	}else if (difficulty[0].getAttribute('difficulty') == '4x3' && difficulty[0].getAttribute('adv') != '') {
 	  time = 30;
+	  difficulty=2;
+	  mAdvanced=2;
 	}else if (difficulty[0].getAttribute('difficulty') == '4x3' && difficulty[0].getAttribute('adv') == ''){
 	  time = 40;
+	  difficulty=2;
+	  mAdvanced=1;
 	}else if (difficulty[0].getAttribute('difficulty') == '4x4' && difficulty[0].getAttribute('adv') != '') {
 	  time = 50;
+	  difficulty=3;
+	  mAdvanced=2;
 	}else if (difficulty[0].getAttribute('difficulty') == '4x4' && difficulty[0].getAttribute('adv') == '') {
 	  time = 60;
+	  difficulty=3;
+	  mAdvanced=1;
 	}else if (difficulty[0].getAttribute('difficulty') == '5x4' && difficulty[0].getAttribute('adv') != '') {
 	  time = 70;
+	  difficulty=4;
+	  mAdvanced=2;
 	}else if (difficulty[0].getAttribute('difficulty') == '5x4' && difficulty[0].getAttribute('adv') == '') {
 	  time = 80;
+	  difficulty=4;
+	  mAdvanced=1;
 	}else if (difficulty[0].getAttribute('difficulty') == '6x5' && difficulty[0].getAttribute('adv') != '') {
 	  time = 90;
+	  difficulty=5;
+	  mAdvanced=2;
 	}else if (difficulty[0].getAttribute('difficulty') == '6x5' && difficulty[0].getAttribute('adv') == '') {
 	  time = 100;
+	  difficulty=5;
+	  mAdvanced=1;
 	}else if (difficulty[0].getAttribute('difficulty') == '8x5' && difficulty[0].getAttribute('adv') != '') {
 	  time = 120;
+	  difficulty=6;
+	  mAdvanced=2;
 	}else if (difficulty[0].getAttribute('difficulty') == '8x5' && difficulty[0].getAttribute('adv') == '') {
 		time = 130
+		difficulty=6;
+		mAdvanced=1;
 	}
 	return time;
   }
@@ -197,9 +224,9 @@ function updateClock(totalTime) {
 			
 			setTimeout(function (){doNothing()},3000);	// TODO No funciona
 
-			window.location.href="./final.php?a="+attempts+"&f="+failures+"&t="+totalTime;
+			window.location.href="./final.php?a="+attempts+"&f="+failures+"&t="+totalTime+"&ft="+totalFinalTime+"&dif="+difficulty+"&ma="+mAdvanced;
 		}else{
-			window.location.href="./gameOver.php?a="+attempts+"&f="+failures+"&t="+totalTime;
+			window.location.href="./gameOver.php?a="+attempts+"&f="+failures+"&t="+totalTime+"&ft="+totalFinalTime+"&dif="+difficulty+"&ma="+mAdvanced;
 		}
 	}else{
 	  setTimeout("updateClock(totalTime--)",1000);

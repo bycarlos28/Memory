@@ -15,14 +15,17 @@
     <tr>
         <td>Level</td>
         <td>Time</td>
+        <td>Total Time</td>
         <td>Fails</td>
         <td>Mode Advanced</td>
         <td>Name</td>
-        <td>Puntos</td>
+        <td>Points</td>
     </tr>
 
     <?php
 
+        include("Functions/functions.php");
+        
         $file = file_get_contents("HallOfFame.txt");
 
         foreach(explode(";",$file) as $player){
@@ -33,7 +36,7 @@
                     echo "<td>".$parameter."</td>";
                 }
 
-                //echo "<td>".calculatePoints($parameters[2],$parameters[])."</td>";
+                echo "<td>".calculatePoints($parameters[3],$parameters[0],$parameters[2],$parameters[1],$parameters[4])."</td>";
 
                 echo "</tr>";
             }

@@ -92,6 +92,7 @@
                     echo '<td>
                             <div class="letter" advanced="'.$ad.'"  flipped="false" cardid='.$cardIDs[$cards["cards"][$rand]].' resolved="false" marked="false" onclick="onlyTwoCards('.$cardCounter.')" oncontextmenu="rightClick('.$cardCounter.')">
                                 <img class="back" src="Media/Images/cardReverse.jpg">
+                                <img class ="vmark" hidden src="Media/Images/OnePieceLogo.png">
                                 <img class ="obverse" hidden src="'.$CardDir.$cards["cards"][$rand].'">
                             </div>
                         </td>';

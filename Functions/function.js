@@ -224,7 +224,7 @@ function updateClock(totalTime) {
 			
 			setTimeout(function (){doNothing()},3000);	// TODO No funciona
 
-			window.location.href="./final.php?a="+attempts+"&f="+failures+"&t="+totalTime+"&ft="+totalFinalTime+"&dif="+difficulty+"&ma="+mAdvanced;
+			window.location.href="./final.php?a="+attempts+"&f="+failures+"&t="+time-totalTime+"&ft="+totalFinalTime+"&dif="+difficulty+"&ma="+mAdvanced;
 		}else{
 			window.location.href="./gameOver.php?a="+attempts+"&f="+failures+"&t="+totalTime+"&ft="+totalFinalTime+"&dif="+difficulty+"&ma="+mAdvanced;
 		}

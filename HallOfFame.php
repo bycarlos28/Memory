@@ -10,9 +10,12 @@
 <body>
     
 
+    <h1>Hall Of Fame</h1>
+
     <table>
 
-    <tr>
+    <tr class="tableH">
+        <td>Ranking</td>
         <td>Level</td>
         <td>Time</td>
         <td>Total Time</td>
@@ -23,6 +26,8 @@
     </tr>
 
     <?php
+
+        $rank=1;
 
         include("Functions/functions.php");
         
@@ -62,6 +67,7 @@
         foreach($ranking as $player){
 
             echo "<tr>";
+            echo "<td>".$rank++."</td>";
             foreach($player as $parameter){
                 echo "<td>".$parameter."</td>";
             }

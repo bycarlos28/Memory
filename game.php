@@ -9,12 +9,16 @@
     <div class="header" >    
         <div class="div_logo"><img class="logo" src="Media/Images/OnePiceLogo.png" alt="gameLogo"></div>
     </div>
+
     <div class="counter_container">
+        <span id="countdown"></span>
         <p id="counter">0</p>
     </div>
-
-    <table id="tableMemory" class="game">
+    <?php
+        echo'<table id="tableMemory" class="game" adv="'.$_GET["adv"].'" difficulty="'.$_GET["dffcltradio"].'")>';
+    ?>
         <?php
+        print_r(isset($_GET["adv"]));
         $table=$_GET['dffcltradio']; 
             include("Functions/functions.php");
 
@@ -53,7 +57,6 @@
 
             $cards=$cardsDuped[0];
             $cardIDs=$cardsDuped[1];
-
             if(isset($_GET["adv"])){
                 $col++;
                 $cardss=modeAdvanced([$cards,$cardIDs],$cardsTotal,$row);
@@ -89,6 +92,7 @@
                     echo '<td>
                             <div class="letter" advanced="'.$ad.'"  flipped="false" cardid='.$cardIDs[$cards["cards"][$rand]].' resolved="false" marked="false" onclick="onlyTwoCards('.$cardCounter.')" oncontextmenu="rightClick('.$cardCounter.')">
                                 <img class="back" src="Media/Images/cardReverse.jpg">
+                                <img class ="vmark" hidden src="Media/Images/OnePieceLogo.png">
                                 <img class ="obverse" hidden src="'.$CardDir.$cards["cards"][$rand].'">
                             </div>
                         </td>';

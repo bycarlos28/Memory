@@ -1,3 +1,6 @@
+var difficulty = document.getElementsByClassName('game');
+var totalTime = determineTime();
+window.onload = updateClock(totalTime);
 var back = document.getElementsByClassName('back');
 var obverse = document.getElementsByClassName('obverse');
 var letters = document.getElementsByClassName('letter');
@@ -19,38 +22,35 @@ noContext.addEventListener('contextmenu', e => {
 
 function rightClick(c){
 	if (playedCard==0){
+		if (document.getElementById('tableMemory').getAttribute('adv')=='on'){
+			if(letters[c].getAttribute("flipped")=="false"){
+				if (letters[c].getAttribute("marked")== 'false'){
+					if (totalMarks<rows){
+						if (letters[c].getAttribute('advanced')==1){
+							letters[c].setAttribute("resolved",true);
+						}
+						letters[c].setAttribute("marked",true);
+						letters[c].classList.add("cardFlag");
 
-		if (letters[c].getAttribute("marked")== 'false'){
-			if (totalMarks<rows){
-				if (letters[c].getAttribute('advanced')==1){
-					letters[c].setAttribute("resolved",true);
+
+						if(isWin()){
+							console.log("Ganado");
+						
+							setTimeout(function (){doNothing()},3000);	// TODO No funciona
+
+							window.location.href="./final.php?a="+attempts+"&f="+failures;
+						}
+						totalMarks++;
+					}
+				}else {
+					letters[c].setAttribute("marked",false);
+					letters[c].classList.remove("cardFlag");
+
+					totalMarks--;
 				}
-				letters[c].setAttribute("marked",true);
-				letters[c].classList.add("cardFlag");
-				back[c].hidden = true;
-				letters[c].setAttribute("flipped",true);
-				obverse[c].removeAttribute("hidden");
-				attempts++;
-				Attempts();
-
-				if(isWin()){
-					console.log("Ganado");
-				
-					setTimeout(function (){doNothing()},3000);	// TODO No funciona
-
-					window.location.href="./final.php?a="+attempts+"&f="+failures;
-				}
-				totalMarks++;
-			}
-		}else {
-			letters[c].setAttribute("marked",false);
-			letters[c].classList.remove("cardFlag");
-			obverse[c].hidden=true;
-			back[c].removeAttribute("hidden");
-			letters[c].setAttribute("flipped",false);
-			letters[c].setAttribute("resolved",false);
-			totalMarks--;º
+		
 		}
+	}		
 	}
 	
 }
@@ -157,3 +157,48 @@ function isCorrect(){
 function doNothing(){
 
 }
+function determineTime() {
+	if (difficulty[0].getAttribute('difficulty') == '4x2' && difficulty[0].getAttribute('adv') != '') {
+	  time=10;
+	}else if (difficulty[0].getAttribute('difficulty') == '4x2' && difficulty[0].getAttribute('adv') == '') {
+	  time = 20;
+	}else if (difficulty[0].getAttribute('difficulty') == '4x3' && difficulty[0].getAttribute('adv') != '') {
+	  time = 30;
+	}else if (difficulty[0].getAttribute('difficulty') == '4x3' && difficulty[0].getAttribute('adv') == ''){
+	  time = 40;
+	}else if (difficulty[0].getAttribute('difficulty') == '4x4' && difficulty[0].getAttribute('adv') != '') {
+	  time = 50;
+	}else if (difficulty[0].getAttribute('difficulty') == '4x4' && difficulty[0].getAttribute('adv') == '') {
+	  time = 60;
+	}else if (difficulty[0].getAttribute('difficulty') == '5x4' && difficulty[0].getAttribute('adv') != '') {
+	  time = 70;
+	}else if (difficulty[0].getAttribute('difficulty') == '5x4' && difficulty[0].getAttribute('adv') == '') {
+	  time = 80;
+	}else if (difficulty[0].getAttribute('difficulty') == '6x5' && difficulty[0].getAttribute('adv') != '') {
+	  time = 90;
+	}else if (difficulty[0].getAttribute('difficulty') == '6x5' && difficulty[0].getAttribute('adv') == '') {
+	  time = 100;
+	}else if (difficulty[0].getAttribute('difficulty') == '8x5' && difficulty[0].getAttribute('adv') != '') {
+	  time = 120;
+	}else if (difficulty[0].getAttribute('difficulty') == '8x5' && difficulty[0].getAttribute('adv') == '') {
+		time = 130
+	}
+	return time;
+  }
+
+function updateClock(totalTime) {
+	console.log("updateclock");
+	document.getElementById('countdown').innerHTML = totalTime;
+	if(totalTime==0){
+		if(isWin()){
+			
+			setTimeout(function (){doNothing()},3000);	// TODO No funciona
+
+			window.location.href="./final.php?a="+attempts+"&f="+failures+"&t="+totalTime;
+		}else{
+			window.location.href="./gameOver.php?a="+attempts+"&f="+failures+"&t="+totalTime;
+		}
+	}else{
+	  setTimeout("updateClock(totalTime--)",1000);
+	}
+  }

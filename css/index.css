@@ -156,7 +156,15 @@ body{
  #pir{
     color:red
 }
+<<<<<<< HEAD
+#diffOptions{
+    float: left;
+    margin-left: 10%;
+}
+
+=======
 #gamePlay{
     display: flex;
 }
+>>>>>>> origin/CarlosF
     

@@ -49,36 +49,38 @@
 		</div>
 	</div>
   <div id="gamePlay">
-      <form method="POST">
-          <input type="radio" id="dificult1" name="dffcltradio" value="Marine">
-          <label for="dificult1">Marine(4x2)</label><br>
-          
-          <input type="radio" id="dificult2" name="dffcltradio" value="Pirate">
-          <label for="dificult2">Pirate(4x3)</label><br>
-          
-          <input type="radio" id="dificult3" name="dffcltradio" value="Vicealmirante">
-          <label for="dificult3">Vicealmirante(4x4)</label><br>
-      
-          <input type="radio" id="dificult4" name="dffcltradio" value="Capitan">
-          <label for="dificult4">Capitan(5x4)</label><br>
+      <form method="GET" action="game.php">
+          <div id="diffOptions">
+            <input type="radio" id="dificult1" name="dffcltradio" value="4x2" required>
+            <label for="dificult1">Marine(4x2)</label><br>
+            
+            <input type="radio" id="dificult2" name="dffcltradio" value="4x3">
+            <label for="dificult2">Pirate(4x3)</label><br>
+            
+            <input type="radio" id="dificult3" name="dffcltradio" value="4x4">
+            <label for="dificult3">Vicealmirante(4x4)</label><br>
+        
+            <input type="radio" id="dificult4" name="dffcltradio" value="5x4">
+            <label for="dificult4">Capitan(5x4)</label><br>
 
-          <input type="radio" id="dificult5" name="dffcltradio" value="Almirante">
-          <label for="dificult5">Almirante(6x5)</label><br>
+            <input type="radio" id="dificult5" name="dffcltradio" value="6x5">
+            <label for="dificult5">Almirante(6x5)</label><br>
 
-          <input type="radio" id="dificult6" name="dffcltradio" value="Yonkou">
-          <label for="dificult6">Yonkou(8x5)</label><br>
-        </form> 
-    <div id="button">
-  		<form action="game.php">
-  			<button>PLAY</button>
-  		</form>
+            <input type="radio" id="dificult6" name="dffcltradio" value="8x5">
+            <label for="dificult6">Yonkou(8x5)</label><br>
+
+            <input type="checkbox" name="adv" id="adv">
+            <label for="adv">Mode Advanced</label>
+          </div>
+          <label for="name"></label>
+          <input id="name" name="name" type="text" placeholder="Name*" required>
+          <div id="button">      
+            <button type="submit" >PLAY</button>
+          </div>
+      </form> 
   	</div>
   </div>
-  <div id="navranking">
-    <form action="ranking.php">
-      <button id="rankbut">RANKING</button>
-    </form>
-  </div>
+
 	<div class="wrap">
 </div>
 </div>

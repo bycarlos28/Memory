@@ -40,11 +40,10 @@ function rightClick(c){
 
 
 						if(isWin()){
-							console.log("Ganado");
-						
-							setTimeout(function (){doNothing()},3000);	// TODO No funciona
+							playSound("win");
 
-							window.location.href="./final.php?a="+attempts+"&f="+failures+"&t="+totalTime+"&ft="+totalFinalTime+"&dif="+difficulty+"&ma="+mAdvanced;
+							setTimeout(function (){window.location.href="./final.php?a="+attempts+"&f="+failures+"&t="+totalTime+"&ft="+totalFinalTime+"&dif="+difficulty+"&ma="+mAdvanced;},1000);
+							
 						}
 						totalMarks++;
 					}
@@ -100,15 +99,23 @@ function checkLetter(first, second){
 	if (letters[cardId[0]].getAttribute("cardid") == letters[cardId[1]].getAttribute("cardid")) {
 		letters[cardId[0]].setAttribute("resolved",true);
 		letters[cardId[1]].setAttribute("resolved",true);
+
+
+
+		
 		
 		if(isWin()){
 			
-			setTimeout(function (){doNothing()},3000);	// TODO No funciona
+			playSound("win");
 
-			window.location.href="./final.php?a="+attempts+"&f="+failures+"&t="+totalTime+"&ft="+totalFinalTime+"&dif="+difficulty+"&ma="+mAdvanced;
+			setTimeout(function (){window.location.href="./final.php?a="+attempts+"&f="+failures+"&t="+totalTime+"&ft="+totalFinalTime+"&dif="+difficulty+"&ma="+mAdvanced;},1000);
+			
+		}else{
+			playSound("match");
 		}
 
 	}else {
+		playSound("error");
 		setTimeout(function(){flipback(first,second);},2000);
 		failures++;		
 		
@@ -163,6 +170,7 @@ function isCorrect(){
 function doNothing(){
 
 }
+
 function determineTime() {
 	if (difficulty[0].getAttribute('difficulty') == '4x2' && difficulty[0].getAttribute('adv') != '') {
 	  time=30;
@@ -222,11 +230,17 @@ function updateClock(totalTime) {
 	if(totalTime==0){
 		if(isWin()){
 			
-			setTimeout(function (){doNothing()},3000);	// TODO No funciona
+			playSound("win");
 
-			window.location.href="./final.php?a="+attempts+"&f="+failures+"&t="+time-totalTime+"&ft="+totalFinalTime+"&dif="+difficulty+"&ma="+mAdvanced;
+			setTimeout(function (){window.location.href="./final.php?a="+attempts+"&f="+failures+"&t="+totalTime+"&ft="+totalFinalTime+"&dif="+difficulty+"&ma="+mAdvanced;},1000);
+			
 		}else{
-			window.location.href="./gameOver.php?a="+attempts+"&f="+failures+"&t="+totalTime+"&ft="+totalFinalTime+"&dif="+difficulty+"&ma="+mAdvanced;
+
+			playSound("lose");
+
+			
+			setTimeout(function (){window.location.href="./gameOver.php?a="+attempts+"&f="+failures+"&t="+totalTime+"&ft="+totalFinalTime+"&dif="+difficulty+"&ma="+mAdvanced;},1000);
+
 		}
 	}else{
 	  setTimeout("updateClock(totalTime--)",1000);
@@ -249,3 +263,30 @@ function updateClock(totalTime) {
 	  container_video.setAttribute("hidden",true);
 	  console.log("holaaa.");
   }
+
+
+function playSound(type){
+
+	sound="";
+
+	switch(type){
+		case "match":
+			sound="../Media/Audio/match.mp3";
+			break;
+		case "win":
+			sound="../Media/Audio/win.mp3";
+			break;
+		case "lose":
+			sound="../Media/Audio/lose.mp3";
+			break;
+		case "error":
+			sound="../Media/Audio/error.mp3";
+			break;
+		default:
+			break;
+	}
+
+	var audio = new Audio(sound);
+	audio.play();
+
+}

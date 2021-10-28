@@ -72,17 +72,15 @@
             <input type="checkbox" name="adv" id="adv">
             <label for="adv">Mode Advanced</label>
           </div>
+          <label for="name"></label>
+          <input id="name" name="name" type="text" placeholder="Name*" required>
           <div id="button">      
             <button type="submit" >PLAY</button>
           </div>
       </form> 
   	</div>
   </div>
-  <div id="navranking">
-    <form action="ranking.php">
-      <button id="rankbut">RANKING</button>
-    </form>
-  </div>
+
 	<div class="wrap">
 </div>
 </div>

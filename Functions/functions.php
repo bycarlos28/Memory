@@ -50,15 +50,24 @@ function modeAdvanced($cardsDuped,$cardsTotal,$row){
     $cardIdCounter=end($cardIDs);
     $cardIdCounter++;
     for($i=1;$i<=$row;$i++){
+
         $rand=random_int(0,count($cardsTotal['cards'])-1);
         $cardIDs[$cardsTotal["cards"][$rand]]=$cardIdCounter;
         array_push($cards["cards"],$cardsTotal["cards"][$rand]);
         unset($cardsTotal["cards"][$rand]);
+        $cardsTotal['cards']=array_values($cardsTotal['cards']);
         $cardIdCounter++;
+        
     }
 
     
 
     return [$cards,$cardIDs];
+
+}
+
+function calculatePoints($errors,$dificulty,$timeTotal,$time,$advanced){
+    
+    return explode(".",($dificulty*(($time*100)/$timeTotal))/(sqrt($errors+1))*$advanced)[0];
 
 }

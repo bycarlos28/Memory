@@ -6,16 +6,28 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+    
+
+
+
     <div class="header" >    
-        <div class="div_logo"><img class="logo" src="Media/Images/OnePiceLogo.png" alt="gameLogo"></div>
+        <div class="div_logo"><img onclick="easterEgg()" class="logo" src="Media/Images/OnePiceLogo.png" alt="gameLogo"></div>
     </div>
-    <div class="counter_container">
-        <p id="counter">0</p>
+    <div id="container_video" hidden>
+        <video height=600>
+            <source src="Media/Video/gomu.mp4" type="video/mp4">
+        </video>
     </div>
 
-    <table class="game">
+    <div class="counter_container">
+        <span id="countdown"></span>
+        <p id="counter">0</p>
+    </div>
+    <?php
+        echo'<table id="tableMemory" class="game" adv="'.$_GET["adv"].'" difficulty="'.$_GET["dffcltradio"].'")>';
+    ?>
         <?php
-        $table=$_GET['dffcltradio'];
+        $table=$_GET['dffcltradio']; 
             include("Functions/functions.php");
 
 
@@ -37,6 +49,7 @@
             $cards=$cardsTotal;
             $cards['cards']=[];
             $cardIndex=[];
+
             for ($i=0; $i < $total ; $i++) { 
                 $cardpush=random_int(0,count($cardsTotal['cards'])-1);
                 array_push($cards['cards'],$cardsTotal['cards'][$cardpush]);  
@@ -52,7 +65,6 @@
 
             $cards=$cardsDuped[0];
             $cardIDs=$cardsDuped[1];
-
             if(isset($_GET["adv"])){
                 $col++;
                 $cardss=modeAdvanced([$cards,$cardIDs],$cardsTotal,$row);
@@ -78,14 +90,17 @@
             for($i=1;$i<=$row;$i++){
                 echo "<tr>";
                 for($j=1;$j<=$col;$j++){
+                    
                     $rand=random_int(0,count($cards["cards"])-1);
+                                                           
                     $ad=0;
                     if(in_array($cardIDs[$cards["cards"][$rand]],$advanceds)){
                         $ad=1;
                     }
                     echo '<td>
-                            <div class="letter" advanced="'.$ad.'" flipped="false" cardid="'.$cardIDs[$cards["cards"][$rand]].'" resolved="false" onclick="onlyTwoCards('.$cardCounter.')">
+                            <div class="letter" advanced="'.$ad.'"  flipped="false" cardid='.$cardIDs[$cards["cards"][$rand]].' resolved="false" marked="false" onclick="onlyTwoCards('.$cardCounter.')" oncontextmenu="rightClick('.$cardCounter.')">
                                 <img class="back" src="Media/Images/cardReverse.jpg">
+                                <img class ="vmark" hidden src="Media/Images/OnePieceLogo.png">
                                 <img class ="obverse" hidden src="'.$CardDir.$cards["cards"][$rand].'">
                             </div>
                         </td>';

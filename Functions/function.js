@@ -237,7 +237,7 @@ function updateClock(totalTime) {
 	  if (attemptsVideo == 4) {
 		  container_video.removeAttribute("hidden");
 		  video[0].play(); 
-		  setTimeout(hiddenVideo,1000000);
+		  setTimeout(hiddenVideo,10000);
 	  }else{
 		  attemptsVideo++;
 	  }

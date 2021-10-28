@@ -18,12 +18,29 @@
             <source src="Media/Video/gomu.mp4" type="video/mp4">
         </video>
     </div>
-
+    <div id="container_video" hidden>
+        <video height=600>
+            <source src="Media/Video/gomu.mp4" type="video/mp4">
+        </video>
+    </div>
+    <p class="curruser">
+        <?php 
+            session_start();
+            if (empty($_GET['name'])){
+                echo "Current User: ".$_SESSION['username'];     
+            }else {
+                $_SESSION['username']=$_GET['name'];
+                echo "Current User: ".$_SESSION['username']; 
+            }
+        ?>
+    </p>
     <div class="counter_container">
         <span id="countdown"></span>
         <p id="counter">0</p>
     </div>
+
     <?php
+
         echo'<table id="tableMemory" class="game" adv="'.$_GET["adv"].'" difficulty="'.$_GET["dffcltradio"].'")>';
     ?>
         <?php

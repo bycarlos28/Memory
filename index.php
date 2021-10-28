@@ -14,6 +14,17 @@
 
 	<div id="wheel" class="steering"></div>
 	<div id="body">
+    <p class="curruser">
+      <?php 
+      session_start();
+      if (!empty($_SESSION['username'])){
+        $_SESSION['username'];
+        echo "Current User: ".$_SESSION['username']; 
+      }
+
+      ?>
+    </p>
+
   
     <div class="pirate">
       <div class="text">
@@ -72,13 +83,20 @@
             <input type="checkbox" name="adv" id="adv">
             <label for="adv">Mode Advanced</label>
           </div>
+          <label for="name"></label>
+          <?php
+            if (!empty($_SESSION['username'])){
+              echo '<input id="name" name="name" type="text" placeholder="Name*">';
+            } else {
+              echo '<input id="name" name="name" type="text" placeholder="Name*" required>';
+            }
+          ?>
           <div id="button">      
             <button type="submit" >PLAY</button>
           </div>
       </form> 
   	</div>
   </div>
-
 	<div class="wrap">
 </div>
 </div>

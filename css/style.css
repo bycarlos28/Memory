@@ -5,7 +5,12 @@ body{
 .cardFlag{
 	border: 5px solid red;
 }
-
+.curruser{
+	margin-left: 2%;
+	font-size: 20px;
+	color:#A239CA;
+	font-weight: bold;
+}
 #button{
 	padding-top: 3%;
 	display: flex;
@@ -137,4 +142,7 @@ img.logo{
 	border-radius: 1px solid black;
 	margin-right: 40px;
 	margin-bottom: 40px;
+}
+#container_video{
+	text-align: center;
 }

@@ -29,6 +29,11 @@ body {
   overflow: hidden;
   background-color: #0375B4;
 }
+#fsc_username{
+  text-align: center;
+  font-weight: bold;
+  font-size: 300%;
+}
 #navigationbuttons{
 	display: flex;
 	flex-direction: row;

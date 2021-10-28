@@ -27,7 +27,6 @@
         echo'<table id="tableMemory" class="game" adv="'.$_GET["adv"].'" difficulty="'.$_GET["dffcltradio"].'")>';
     ?>
         <?php
-        print_r(isset($_GET["adv"]));
         $table=$_GET['dffcltradio']; 
             include("Functions/functions.php");
 

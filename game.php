@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 	<title>Game</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/game.css">
 </head>
 <body>
     
@@ -46,7 +46,6 @@
     </div>
 
     <?php
-
         echo'<table id="tableMemory" class="game" adv="'.$_GET["adv"].'" difficulty="'.$_GET["dffcltradio"].'")>';
     ?>
         <?php

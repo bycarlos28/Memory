@@ -3,16 +3,12 @@
 <head>
 	<meta charset="utf-8">
 	<title>Welcome to Memory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/index.css">
   <link href="https://fonts.googleapis.com/css?family=Raleway:700" rel="stylesheet">
 
 </head>
 <body>
-
-
-
-	<div id="wheel" class="steering"></div>
 	<div id="body">
     <p class="curruser">
       <?php 
@@ -48,7 +44,6 @@
       </div>
     </div>
 		<div id="Instructions">
-			
 			<h1>Instructions</h1>
 			<ul>
 				<li><p>To turn a card you have to click on it</p></li>
@@ -123,29 +118,17 @@
         <div class="ship-body-top-back">
           <div class="blue-strip-top-half"></div>
         </div>
-        <div class="chimney-base">
-          <div class="chimney"></div>
-          <div class="chimney"></div>
+        <label for="name"></label>
+        <input id="name" name="name" type="text" placeholder="Name*" required>
+        <div id="button">      
+          <button type="submit" >PLAY</button>
         </div>
-      </div>
-      <div class="ship-body-top-front">
-        <div class="top-antenna"></div>
-        <div class="circular-base"></div>
-        <div class="circular-base-1"></div>
-      </div>
-      <div class="ship-body-top-front-mirror"></div>
-    </div>
+    </form> 
   </div>
-  </div>
-
-   <div id="halloffame">    
+  <div id="halloffame">    
     <form action="HallOfFame.php">
-			<button>HallOfFame</button>
-		</form>
+      <button>HallOfFame</button>
+    </form>
   </div>
-
-</div>
-
-
 </body>
 </html>

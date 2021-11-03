@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HallOfFame</title>
     <link rel="stylesheet" href="css/halloffame.css">
 </head>
 <body>
-    
+    <div id="header" >    
+        <div id="div_logo">
+            <img id="logo" src="Media/Images/OnePiceLogo.png" alt="gameLogo">
+        </div>
+    </div>
+    <h1>Hall Of Fame</h1>
 
     <h1>Hall Of Fame</h1>
 
@@ -71,6 +76,7 @@
             foreach($player as $parameter){
                 echo "<td>".$parameter."</td>";
             }
+
             echo "</tr>";
 
         }
@@ -79,7 +85,9 @@
 
     ?>
     </table>
-
-
+    <div id="ContainerButton">
+        <form action="index.php">
+            <button id=buttonhome>Home</button>
+        </form>
 </body>
 </html>

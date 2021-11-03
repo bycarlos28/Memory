@@ -1,0 +1,106 @@
+@media screen and (max-width: 1920px){
+    body{
+        padding: 0;
+        margin: 0;
+    }
+    .header{
+        background-color: #0375B4;
+        width: 100%;
+        height: 75px;
+    }
+    .div_logo{
+        text-align: center;
+    }
+    .logo{
+        text-align: center;
+        max-width: 15%;
+        height: 125px;
+        margin: 0px;
+    }
+    #container_video{
+        text-align: center;
+    }
+    .counter_container{
+        margin-top: 10px;
+        margin-right: 200px;
+        text-align: right;
+    }
+    #counter{
+        border-radius: 15px;
+        margin-left: 96%;
+        height: 40px;
+        font-size: 30px;
+        background-color: #0375B4;
+        text-align: center;
+    }
+    table.game{
+        vertical-align: middle;
+        margin: auto;
+        width: auto;
+        max-height: 600px;
+        margin-top: -80px;
+    }
+    img{
+        width: 135px;
+        height: 202px;
+    }
+    td{
+        width: auto;
+        height: auto;
+    }
+    tr{
+        width: auto;
+        height: auto;
+    }
+    #cancelGame{
+        position: absolute;
+        height: 70px;
+        width: 300px;
+        bottom: 0;
+        margin-bottom: 20px;
+        margin-left: 20px;
+        background-color: #FCCE00;
+        border-radius: 25px;
+        border: 2px solid #A239CA;
+        font-weight: bold;
+        font-size: 20px;
+    }
+}
+.cardFlag{
+    border: 5px solid red;
+}
+
+@media screen and (max-width: 800px){
+    .logo{
+        text-align: center;
+        max-width: 15%;
+        height: 100px;
+        margin: 0px;
+    }
+    table.game{
+        vertical-align: middle;
+        margin: auto;
+        width: auto;
+        height: 300px;
+        margin-top: 0px;
+        margin-top: -60px;
+    }
+    .counter_container{
+        margin-top: 10px;
+        margin-right: 20px;
+        text-align: right;
+    }
+    #cancelGame{
+        position: absolute;
+        height: 70px;
+        width: 100px;
+        top: 0;
+        margin-top: 20px;
+        margin-left: 20px;
+        background-color: #FCCE00;
+        border-radius: 25px;
+        border: 2px solid #A239CA;
+        font-weight: bold;
+        font-size: 20px;
+    }
+}

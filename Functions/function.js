@@ -18,6 +18,7 @@ var secondCard = null;
 var rows = document.getElementsByTagName('tr').length;
 var difficulty;
 var mAdvanced;
+updatePoints();
 
 var totalMarks = 0;
 const noContext = document.getElementById('tableMemory');
@@ -225,9 +226,12 @@ function determineTime() {
   }
 
 function updateClock(totalTime) {
-	console.log("updateclock");
 	document.getElementById('countdown').innerHTML = totalTime;
+
+	updatePoints();
+
 	if(totalTime==0){
+
 		if(isWin()){
 			
 			playSound("win");
@@ -258,10 +262,8 @@ function updateClock(totalTime) {
   }
   
   function hiddenVideo(){
-	  console.log("entramos");
 	  video[0].pause();
 	  container_video.setAttribute("hidden",true);
-	  console.log("holaaa.");
   }
 
 
@@ -288,5 +290,92 @@ function playSound(type){
 
 	var audio = new Audio(sound);
 	audio.play();
+
+}
+
+
+function calculatePoints(errors,dificulty,timeTotal,time,advanced){
+
+	return (dificulty*((time*100)/timeTotal))/(Math.sqrt(errors+1))*advanced;
+
+}
+
+function getMaxPtsPlayer(HOF){
+
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", HOF, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                
+				players=allText.split(";");
+
+				allPlayers=[];
+
+				players.forEach(player => {
+
+					player=player.split(",");
+
+					allPlayers.push({"dif":player[0],"t":player[1],"ft":player[2],"f":player[3],"ma":player[4],"name":player[5],"points":calculatePoints(player[3],player[0],player[2],player[1],player[4])});
+
+				});
+
+				allPlayers.sort(function(a,b) {
+					return b.points - a.points
+				});
+
+				a=allPlayers[0];
+
+            }
+        }
+
+    }
+    rawFile.send(null);
+
+	return a;
+
+}
+
+function comparePoints(maxPlayer,currentPlayer){
+
+		if(maxPlayer["points"]<currentPlayer["points"]){
+			return currentPlayer;
+		}else{
+			return maxPlayer;
+		}
+
+}
+
+function updatePoints(){
+
+
+	maxplayer=getMaxPtsPlayer("../HallOfFame.txt");
+
+
+	spanCurrent= document.getElementById("nameCurrentUser");
+
+	p=Math.floor(calculatePoints(failures,difficulty,totalFinalTime,totalTime,mAdvanced));
+
+	if(p<0){
+		p=0;
+	}
+
+	spanCurrent.innerHTML=p;
+
+
+	TopPlayer=comparePoints({"name":maxplayer["name"],"points":Math.floor(maxplayer["points"])},{"name":document.getElementById("userName").textContent,"points":Math.floor(calculatePoints(failures,difficulty,totalFinalTime,totalTime,mAdvanced))});
+
+	spanMax= document.getElementById("nameMaxUser");
+
+	if(TopPlayer["points"]<0){
+		TopPlayer["points"]=0;
+	}
+
+	spanMax.innerHTML= TopPlayer["name"]+" Pts: "+TopPlayer["points"];
+
 
 }

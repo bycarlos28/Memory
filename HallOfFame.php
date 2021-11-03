@@ -71,9 +71,7 @@
             foreach($player as $parameter){
                 echo "<td>".$parameter."</td>";
             }
-
             echo "</tr>";
-            
 
         }
 

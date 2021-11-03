@@ -27,12 +27,18 @@
         <?php 
             session_start();
             if (empty($_GET['name'])){
-                echo "Current User: ".$_SESSION['username'];     
+                echo "Current User: ".$_SESSION['username']." Pts <span id='nameCurrentUser'></span>";     
             }else {
                 $_SESSION['username']=$_GET['name'];
-                echo "Current User: ".$_SESSION['username']; 
+                echo "Current User: ".$_SESSION['username']." Pts <span id='nameCurrentUser'></span>"; 
             }
+
+            echo "<span id='userName' hidden >".$_SESSION['username']."</span>";
+
         ?>
+    </p>
+    <p class="maxUser curruser">
+        Top 1: <span id="nameMaxUser"></span>
     </p>
     <div class="counter_container">
         <span id="countdown"></span>

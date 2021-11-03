@@ -44,9 +44,10 @@
 
           <input type="radio" id="dificult6" name="dffcltradio" value="8x5">
           <label for="dificult6">Yonkou(8x5)</label><br>
-
-          <input type="checkbox" name="adv" id="adv">
-          <label for="adv">Mode Advanced</label>
+          <div id="adva">
+            <input type="checkbox" name="adv" id="adv">
+            <label for="adv">Mode Advanced</label>
+          </div>
         </div>
         <label for="name"></label>
         <input id="name" name="name" type="text" placeholder="Name*" required>

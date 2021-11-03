@@ -3,13 +3,9 @@
 <head>
 <meta charset="utf-8">
 	<title>Game</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/game.css">
 </head>
 <body>
-    
-
-
-
     <div class="header" >    
         <div class="div_logo"><img onclick="easterEgg()" class="logo" src="Media/Images/OnePiceLogo.png" alt="gameLogo"></div>
     </div>
@@ -27,7 +23,6 @@
         echo'<table id="tableMemory" class="game" adv="'.$_GET["adv"].'" difficulty="'.$_GET["dffcltradio"].'")>';
     ?>
         <?php
-        print_r(isset($_GET["adv"]));
         $table=$_GET['dffcltradio']; 
             include("Functions/functions.php");
 

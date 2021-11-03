@@ -172,8 +172,6 @@
                 }
                 
             }
-            print_r($_SESSION['saveCardId']);
-            print_r($_SESSION['saveGame']);
         
         ?>
     </table>

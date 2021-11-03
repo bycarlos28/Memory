@@ -13,7 +13,6 @@
             <img id="logo" src="Media/Images/OnePiceLogo.png" alt="gameLogo">
         </div>
     </div>
-    <h1>Hall Of Fame</h1>
 
     <h1>Hall Of Fame</h1>
 

@@ -42,12 +42,12 @@
 				}
 		?>
 <div id=navigationbuttons>
-		<form id="homeBut" action="index.php">
-	  	<button>HOME</button>
-	  </form>
-		<form id="rankBut" action="HallOfFame.php">
-	  	<button>Hall of Fame</button>
-	  </form>
+	<form id="homeBut" action="index.php">
+	  	<button id="home">HOME</button>
+	</form>
+	<form id="rankBut" action="HallOfFame.php">
+	  	<button id="fame">Hall of Fame</button>
+	</form>
 </div>
 
 

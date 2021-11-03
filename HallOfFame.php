@@ -81,7 +81,7 @@
         }
     ?>
     </table>
-    <div id="ContainerButton"
+    <div id="ContainerButton">
         <form action="index.php">
             <button id=buttonhome>Home</button>
         </form>

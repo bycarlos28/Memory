@@ -108,42 +108,74 @@
             }
 
 
-
+            session_start();
+            $_SESSION['saveGame'];
+            $_SESSION['saveCardId'];
             $cardCounter=0;
-            for($i=1;$i<=$row;$i++){
-                echo "<tr>";
-                for($j=1;$j<=$col;$j++){
-                    
-                    $rand=random_int(0,count($cards["cards"])-1);
-                                                           
-                    $ad=0;
-                    if(in_array($cardIDs[$cards["cards"][$rand]],$advanceds)){
-                        $ad=1;
-                    }
-                    echo '<td>
-                            <div class="letter" advanced="'.$ad.'"  flipped="false" cardid='.$cardIDs[$cards["cards"][$rand]].' resolved="false" marked="false" onclick="onlyTwoCards('.$cardCounter.')" oncontextmenu="rightClick('.$cardCounter.')">
-                                <img class="back" src="Media/Images/cardReverse.jpg">
-                                <img class ="vmark" hidden src="Media/Images/OnePieceLogo.png">
-                                <img class ="obverse" hidden src="'.$CardDir.$cards["cards"][$rand].'">
-                            </div>
-                        </td>';
-                    
+            if (empty($_SESSION['saveGame'])){
+                for($i=1;$i<=$row;$i++){
+                    echo "<tr>";
+                    $_SESSION['saveGame'][$i]=[];
+                    $_SESSION['saveCardId'][$i]=[];
+                    for($j=1;$j<=$col;$j++){
+                        
+                        $rand=random_int(0,count($cards["cards"])-1);
+                        array_push($_SESSION['saveGame'][$i],$CardDir.$cards["cards"][$rand]);
+                        array_push($_SESSION['saveCardId'][$i],$cardIDs[$cards["cards"][$rand]]);
+                        $ad=0;
+                        if(in_array($cardIDs[$cards["cards"][$rand]],$advanceds)){
+                            $ad=1;
+                        }
+                        echo '<td>
+                                <div class="letter" advanced="'.$ad.'"  flipped="false" cardid='.$cardIDs[$cards["cards"][$rand]].' resolved="false" marked="false" onclick="onlyTwoCards('.$cardCounter.')" oncontextmenu="rightClick('.$cardCounter.')">
+                                    <img class="back" src="Media/Images/cardReverse.jpg">
+                                    <img class ="vmark" hidden src="Media/Images/OnePieceLogo.png">
+                                    <img class ="obverse" hidden src="'.$CardDir.$cards["cards"][$rand].'">
+                                </div>
+                            </td>';
+                        
 
-                    if($cards["advanced"][$rand]==0){
-                        unset($cards["cards"][$rand]);
-                    }else{
-                        foreach($cards["cards"] as $card){
-                            if($card==$cards["advanced"][$rand]){
-                                unset($cards[array_search($card,$cards["cards"])]);
+                        if($cards["advanced"][$rand]==0){
+                            unset($cards["cards"][$rand]);
+                        }else{
+                            foreach($cards["cards"] as $card){
+                                if($card==$cards["advanced"][$rand]){
+                                    unset($cards[array_search($card,$cards["cards"])]);
+                                }
                             }
                         }
-                    }
 
-                    $cards["cards"] = array_values($cards["cards"]);
-                    $cardCounter++;
+                        $cards["cards"] = array_values($cards["cards"]);
+                        $cardCounter++;
+                    }
+                    echo "</tr>";
                 }
-                echo "</tr>";
+            }else {
+                $cardCounter=0;
+                for ($i=1; $i < count($_SESSION['saveGame'])+1 ; $i++) { 
+                    echo "<tr>";
+                    for ($j=1; $j < count($_SESSION['saveGame'][$i])+1 ; $j++) { 
+                        $ad=0;
+                        if(in_array($_SESSION['saveCardId'][$i][$j-1],$advanceds)){
+                            $ad=1;
+                        }
+                        echo '<td>
+                                <div class="letter" advanced="'.$ad.'"  flipped="false" cardid='.$_SESSION['saveCardId'][$i][$j-1].' resolved="false" marked="false" onclick="onlyTwoCards('.$cardCounter.')" oncontextmenu="rightClick('.$cardCounter.')">
+                                    <img class="back" src="Media/Images/cardReverse.jpg">
+                                    <img class ="vmark" hidden src="Media/Images/OnePieceLogo.png">
+                                    <img class ="obverse" hidden src="'.$_SESSION['saveGame'][$i][$j-1].'">
+                                </div>
+                            </td>';
+                            
+                    $cardCounter++;
+                    }
+                    echo "</tr>";
+                }
+                
             }
+            print_r($_SESSION['saveCardId']);
+            print_r($_SESSION['saveGame']);
+        
         ?>
     </table>
     <script type="text/javascript" src="Functions/function.js"></script>

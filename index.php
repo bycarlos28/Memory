@@ -85,6 +85,9 @@
           </div>
           <label for="name"></label>
           <?php
+            session_start();
+            $_SESSION['saveGame']=[];
+
             if (!empty($_SESSION['username'])){
               echo '<input id="name" name="name" type="text" placeholder="Name*">';
             } else {

@@ -1,11 +1,10 @@
-.curruser{
+@media screen and (max-width: 1920px){
+    .curruser{
 	margin-left: 2%;
 	font-size: 20px;
 	color:#A239CA;
 	font-weight: bold;
 }
-
-@media screen and (max-width: 1920px){
     body{
         padding: 0;
         margin: 0;
